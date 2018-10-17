@@ -28,7 +28,7 @@ class App extends Model
 
     public static $TECHS = [
         'laravel' => 'Laravel',
-        'javascript' => 'JavaScript',
+//        'javascript' => 'JavaScript',
         'nodejs' => 'NodeJS',
         'angular' => 'Angular',
         'vue' => 'Vue.js',
@@ -36,7 +36,7 @@ class App extends Model
         'woocommerce' => 'Woocommerce',
         'octobercms' => 'October CMS',
         'sass' => 'Sass',
-        'less' => 'LESS',
+//        'less' => 'LESS',
     ];
 
     public static $SOCIAL = [
