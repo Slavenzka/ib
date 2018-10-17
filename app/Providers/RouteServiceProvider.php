@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Contact\Brief;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 class RouteServiceProvider extends ServiceProvider
@@ -42,16 +42,17 @@ class RouteServiceProvider extends ServiceProvider
                     'compare' => 'app.brief.index',
                     'name' => trans('page.title.brief'),
                 ],
-//                [
-//                    'route' => 'app.contact.index',
-//                    'compare' => 'app.contact.index',
-//                    'name' => trans('page.title.contacts'),
-//                ],
+                //                [
+                //                    'route' => 'app.contact.index',
+                //                    'compare' => 'app.contact.index',
+                //                    'name' => trans('page.title.contacts'),
+                //                ],
             ]);
             View::share('langs', ['ru', 'en']);
         });
 
         View::composer('admin.*', function () {
+            app()->setLocale('ru');
             $nav = [
                 [
                     'route' => 'admin.brief.index',

@@ -17,6 +17,7 @@ Route::group([
     ], function () {
 
         Route::get('/', 'BriefController@index')->name('.index');
+        Route::get('{brief}', 'BriefController@show')->name('.show');
 
     });
 

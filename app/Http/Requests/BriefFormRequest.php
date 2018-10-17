@@ -24,9 +24,9 @@ class BriefFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'contact.name' => 'required',
-            'contact.employer_name' => 'required',
-            'contact.employer_phone' => 'required',
+            'contact.f1' => 'required',
+            'contact.f4' => 'required',
+            'contact.f5' => 'required',
         ];
     }
 }

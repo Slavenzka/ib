@@ -12,6 +12,16 @@ class Brief extends Model
         'declined' => 'Отклонен',
     ];
 
+    public static $GROUPS = [
+        'contact' => 'Информация о компании и контактном лице',
+        'company' => 'О компании или бренде',
+        'target' => 'Цели создания сайта',
+        'group' => 'Целевая аудитория',
+        'functional' => 'Общие требования к функциональности сайта',
+        'design' => 'Дизайн',
+        'hosting' => 'Хостинг и доменное имя',
+    ];
+
     protected $fillable = [
         'name',
         'body',
