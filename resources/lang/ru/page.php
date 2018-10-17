@@ -2,24 +2,24 @@
 
 return [
     'title' => [
-        'home' => 'Welcome',
-        'works' => 'Our Works',
-        'contacts' => 'Contact Us',
-        'about' => 'About Us',
-        'brief' => 'Brief',
-        'thanks' => 'Thank You!',
+        'home' => 'Добро пожаловать',
+        'works' => 'Наши работы',
+        'contacts' => 'Контакты',
+        'about' => 'О нас',
+        'brief' => 'Бриф',
+        'thanks' => 'Спасибо!',
     ],
 
     'home' => [
         'promo' => [
-            'title' => 'We develop websites and interfaces',
-            'subtitle' => 'Tools to increase the efficiency of your business',
+            'title' => 'Мы разрабатываем сайты и интерфейсы',
+            'subtitle' => 'Инструменты повышающие эффективность вашего бизнеса',
         ],
         'slideshow' => [
             'title' => 'Our latest works',
         ],
         'tech' => [
-            'title' => 'Our Capabilities',
+            'title' => 'Наши возможности',
             'subtitle' => 'Check our skills set to choose the one that suits you most',
             'capabilities' => [
                 [
@@ -129,11 +129,11 @@ return [
     ],
 
     'thanks' => [
-        'title' => 'Thank You!',
+        'title' => 'Спасибо!',
         'message' => [
-            'default' => 'Form has been sent.',
-            'brief' => 'Brief has been sent.',
-            'contact' => 'Contact form has been sent.',
+            'default' => 'Форма была отправлена.',
+            'brief' => 'Бриф отправлен на обработку.',
+            'contact' => 'Ваша контактная информация отправлена. Мы свяжемся с Вами в ближайшее время.',
         ],
     ],
 ];

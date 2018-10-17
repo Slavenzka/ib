@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'discuss' => 'Discuss the project',
-    'send' => 'Send',
-    'back_to_main' => 'Back to main page',
-    'login' => 'Enter'
+    'discuss' => 'Обсудить проект',
+    'send' => 'Отправить',
+    'back_to_main' => 'Вернуться на главную',
+    'login' => 'Войти',
 ];

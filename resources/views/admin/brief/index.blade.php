@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-auto">
                             <span
-                                class="py-1 px-2 rounded bg-{{ $brief->status == 'progress' ? 'warning' : ($brief->status == 'finished' ? 'success' : 'danger') }}">
+                                class="py-1 px-2 small rounded bg-{{ $brief->status == 'progress' ? 'warning' : ($brief->status == 'finished' ? 'success' : 'danger') }}">
                             {{ \App\Models\Contact\Brief::$STATUSES[$brief->status] }}
                             </span>
                         </div>
