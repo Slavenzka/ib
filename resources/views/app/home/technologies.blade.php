@@ -12,12 +12,12 @@
         </p>
 
         <div class="flex align-center justify-center">
-            @foreach(array_keys(\App\Models\App::$TECHS) as $tech)
+            @foreach(\App\Models\App::$TECHS as $key => $tech)
                 @php
                 $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp
                 <revealer class="tech-item flex align-center justify-center m-4" :params="{direction: {{ "'$dir'" }}}">
-                    <img src="{{ asset('images/icons/'.$tech.'.svg') }}" alt="{{ $tech }}">
+                    <img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}">
                 </revealer>
             @endforeach
         </div>
