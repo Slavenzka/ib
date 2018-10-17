@@ -1,0 +1,39 @@
+html {
+    font-size: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: 1.25rem;
+    line-height: 1.625;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: $color-text;
+    background-color: $color-bg;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+#app {
+    transition: opacity 0.35s;
+}
+
+section {
+    padding: rem-calc(100) 0;
+    &.section {
+        &--top {
+            padding-top: rem-calc(200);
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+}

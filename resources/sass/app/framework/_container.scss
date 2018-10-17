@@ -1,0 +1,10 @@
+.container {
+    position: relative;
+    padding: 0 rem-calc(10);
+    margin: 0 auto;
+    max-width: map_get($grid-breakpoints, xxl);
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 0 rem-calc(80);
+    }
+}

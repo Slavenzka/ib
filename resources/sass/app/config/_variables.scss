@@ -1,0 +1,25 @@
+$color-text: #f1f1f1;
+$color-bg: #0c0c0c;
+$color-link: $color-text;
+$color-link-hover: #f1f1f1;
+$color-deco: #141414;
+$color-side: #353535;
+$color-danger: #b00020;
+
+$font-family-base: 'Alegreya Sans', Helvetica, Arial, sans-serif;
+$font-family-headings: 'Geometria', Helvetica, Arial, sans-serif;
+
+$font-weight-bold: bold;
+$font-weight-headings: 800;
+
+$columns: 12;
+$gutter: 2.5rem;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 640px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1520px,
+);

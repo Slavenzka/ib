@@ -1,0 +1,50 @@
+$aligns: left right center justify;
+
+@each $align in $aligns {
+    .text-#{$align} {
+        text-align: #{$align};
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+        @each $align in $aligns {
+            .text-#{$breakpoint}-#{$align} {
+                text-align: #{$align};
+            }
+        }
+    }
+}
+
+$weight: light 300, normal 400, medium 500, bold 700, heavy 900;
+
+@each $n, $w in $weight {
+    .text-#{$n} {
+        font-weight: $w !important;
+    }
+}
+
+$transforms: none uppercase lowercase capitalize;
+
+@each $transform in $transforms {
+    .text-#{$transform} {
+        text-transform: #{$transform} !important;
+    }
+}
+
+
+//$colors: white #fff, primary $primary, danger $danger, secondary $secondary, dark $dark;
+//
+//@each $name, $color in $colors {
+//    .text-#{$name} {
+//        color: #{$color} !important;
+//    }
+//}
+
+.text-muted {
+    color: rgba($color-text, 0.5);
+}
+
+.no-wrap {
+    white-space: nowrap;
+}

@@ -1,0 +1,33 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+
+    .page-item {
+        margin: 0 5px;
+
+        a, span {
+            padding: 0;
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 28px;
+            text-align: center;
+        }
+
+        &.active {
+            span {
+                background-color: $purple;
+                color: #fff;
+                border-color: transparent;
+            }
+        }
+    }
+
+    &-prev,
+    &-next {
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,27 @@
+.tech-item {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+
+    img {
+        max-height: rem-calc(60);
+    }
+}
+
+.capabilities,
+.principles {
+    margin-bottom: -2.5rem;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+
+    .capability,
+    .principe {
+        margin-bottom: 2.5rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+
+        &__number {
+            @extend .slide__number;
+        }
+    }
+}

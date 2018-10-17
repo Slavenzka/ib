@@ -1,0 +1,99 @@
+$count: 10;
+$size: 5; // px
+
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@for $gutter from 0 through $count {
+    .p-#{$gutter} {
+        padding: $size / 16 * $gutter * 1rem !important;
+    }
+
+    .px-#{$gutter} {
+        padding-left: $size / 16 * $gutter * 1rem !important;
+        padding-right: $size / 16 * $gutter * 1rem !important;
+    }
+
+    .py-#{$gutter} {
+        padding-top: $size / 16 * $gutter * 1rem !important;
+        padding-bottom: $size / 16 * $gutter * 1rem !important;
+    }
+
+    .m-#{$gutter} {
+        margin: $size / 16 * $gutter * 1rem !important;
+    }
+
+    .mx-#{$gutter} {
+        margin-left: $size / 16 * $gutter * 1rem !important;
+        margin-right: $size / 16 * $gutter * 1rem !important;
+    }
+
+    .my-#{$gutter} {
+        margin-top: $size / 16 * $gutter * 1rem !important;
+        margin-bottom: $size / 16 * $gutter * 1rem !important;
+    }
+
+    @each $a, $b in t top, r right, b bottom, l left {
+        .p#{$a}-#{$gutter} {
+            padding-#{$b}: $size / 16 * $gutter * 1rem !important;
+        }
+
+        .m#{$a}-#{$gutter} {
+            margin-#{$b}: $size / 16 * $gutter * 1rem !important;
+        }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+        @for $gutter from 0 through $count {
+            .p-#{$breakpoint}-#{$gutter} {
+                padding: $size / 16 * $gutter * 1rem !important;
+            }
+
+            .px-#{$breakpoint}-#{$gutter} {
+                padding-left: $size / 16 * $gutter * 1rem !important;
+                padding-right: $size / 16 * $gutter * 1rem !important;
+            }
+
+            .py-#{$breakpoint}-#{$gutter} {
+                padding-top: $size / 16 * $gutter * 1rem !important;
+                padding-bottom: $size / 16 * $gutter * 1rem !important;
+            }
+
+            .m-#{$breakpoint}-#{$gutter} {
+                margin: $size / 16 * $gutter * 1rem !important;
+            }
+
+            .mx-#{$breakpoint}-#{$gutter} {
+                margin-left: $size / 16 * $gutter * 1rem !important;
+                margin-right: $size / 16 * $gutter * 1rem !important;
+            }
+
+            .my-#{$breakpoint}-#{$gutter} {
+                margin-top: $size / 16 * $gutter * 1rem !important;
+                margin-bottom: $size / 16 * $gutter * 1rem !important;
+            }
+
+            @each $a, $b in t top, r right, b bottom, l left {
+                .p#{$a}-#{$breakpoint}-#{$gutter} {
+                    padding-#{$b}: $size / 16 * $gutter * 1rem !important;
+                }
+
+                .m#{$a}-#{$breakpoint}-#{$gutter} {
+                    margin-#{$b}: $size / 16 * $gutter * 1rem !important;
+                }
+            }
+        }
+    }
+}

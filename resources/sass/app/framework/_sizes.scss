@@ -1,0 +1,61 @@
+@each $size in (100, 80, 70, 50) {
+    .mih-#{$size} {
+        min-height: $size * 1%;
+    }
+
+    .mihv-#{$size} {
+        min-height: $size * 1vh;
+    }
+
+    .mah-#{$size} {
+        max-height: $size * 1%;
+    }
+
+    .mahv-#{$size} {
+        max-height: $size * 1vh;
+    }
+
+    .miw-#{$size} {
+        min-width: $size * 1%;
+    }
+
+    .maw-#{$size} {
+        max-width: $size * 1%;
+    }
+
+    .w-#{$size} {
+        width: $size * 1%;
+    }
+
+    .h-#{$size} {
+        width: $size * 1%;
+    }
+
+    @each $breakpoint in map_keys($grid-breakpoints) {
+        @media (min-width: map_get($grid-breakpoints, $breakpoint)) {
+            .mih-#{$breakpoint}-#{$size} {
+                min-height: $size * 1%;
+            }
+
+            .mah-#{$breakpoint}-#{$size} {
+                max-height: $size * 1%;
+            }
+
+            .miw-#{$breakpoint}-#{$size} {
+                min-width: $size * 1%;
+            }
+
+            .maw-#{$breakpoint}-#{$size} {
+                max-width: $size * 1%;
+            }
+
+            .w-#{$breakpoint}-#{$size} {
+                width: $size * 1%;
+            }
+
+            .h-#{$breakpoint}-#{$size} {
+                width: $size * 1%;
+            }
+        }
+    }
+}

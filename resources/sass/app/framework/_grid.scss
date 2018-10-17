@@ -1,0 +1,61 @@
+.grid {
+    @extend .flex;
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+}
+
+%column {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+}
+
+.c {
+    @extend %column;
+    flex: 1 1 auto;
+    max-width: 100%;
+}
+
+.c-auto {
+    @extend %column;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.grid.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+    .c,
+    .c-auto {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@for $column from 1 through $columns {
+    .w-#{$column}\/#{$columns} {
+        @extend %column;
+        flex: 0 0 (100% / $columns * $column);
+        max-width: 100% / $columns * $column;
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+        .w-#{$breakpoint}-\1 {
+            padding-left: $gutter/2;
+            padding-right: $gutter/2;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @for $column from 1 through $columns {
+            .w-#{$breakpoint}-#{$column}\/#{$columns} {
+                padding-left: $gutter/2;
+                padding-right: $gutter/2;
+                flex: 0 0 (100% / $columns * $column);
+                max-width: 100% / $columns * $column;
+            }
+        }
+    }
+}

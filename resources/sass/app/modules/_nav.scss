@@ -1,0 +1,92 @@
+#nav {
+    position: fixed;
+    right: 1.625rem;
+    top: 1.625rem;
+    z-index: 100;
+
+    .lang, .nav-icon {
+        position: relative;
+        z-index: 10001;
+    }
+
+    .lang {
+        font-size: rem-calc(12);
+
+        span {
+            position: relative;
+            color: $color-bg;
+
+            &::before {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: rem-calc(24);
+                height: rem-calc(24);
+                margin: rem-calc(-12) 0 0 rem-calc(-12);
+                content: '';
+                border-radius: 50%;
+                background-color: $color-text;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+#app-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $color-bg;
+    padding: 160px 40px 40px;
+    z-index: 10000;
+
+    transform: translateX(100%);
+    transition: 0.5s;
+
+    &.nav-visible {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        &:nth-child(even) a::before {
+            transform: translateX(-150%);
+        }
+
+        &:nth-child(odd) a::before {
+            transform: translateX(150%);
+        }
+
+        a {
+            font: 800 2.5rem/1.5 $font-family-headings;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                left: -1rem;
+                right: -1rem;
+                top: 50%;
+                border-bottom: 4px solid $color-side;
+                content: '';
+                z-index: -1;
+                opacity: 0;
+                transition: 0.35s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        &.is-active {
+            a::before {
+                transform: translateX(0);
+                opacity: 1;
+                border-bottom: 8px solid $color-side;
+                margin-top: -4px;
+            }
+        }
+    }
+}
