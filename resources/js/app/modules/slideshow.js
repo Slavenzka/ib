@@ -535,6 +535,6 @@ import charming from 'charming';
     // Init slideshow.
     const container = document.querySelector('.slideshow');
     if (!!container) {
-        new Slideshow(container);
+        window.onload = () => new Slideshow(container);
     }
 }
