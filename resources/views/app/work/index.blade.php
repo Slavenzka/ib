@@ -15,7 +15,6 @@
                 <div class="w-md-6/12">
                     <a href="{{ route('app.work.show', $work) }}" class="work-article">
                         <div class="work-article__img-wrap">
-                            <a href="{{ route('app.work.show', $work) }}" class="work-article__link"></a>
                             <div class="work-article__img" style="background-image: url({{ $work->image_medium }});"></div>
                         </div>
                         <div class="work-article__side">{{ $work->type->title }}</div>
