@@ -533,10 +533,8 @@ import charming from 'charming';
     let allowTilt = true;
 
     // Init slideshow.
-    document.addEventListener('DOMContentLoaded', function () {
-        const container = document.querySelector('.slideshow');
-        if (!!container) {
-            new Slideshow(container);
-        }
-    })
+    const container = document.querySelector('.slideshow');
+    if (!!container) {
+        new Slideshow(container);
+    }
 }
