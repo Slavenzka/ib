@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i&amp;subset=cyrillic"
           rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/favicon-32x32.png') }}">
@@ -35,7 +36,5 @@
     </main>
     @include('partials.app.footer')
 </div>
-
-<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
