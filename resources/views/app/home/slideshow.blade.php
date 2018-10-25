@@ -1,4 +1,4 @@
-<section class="rellax">
+<section class="rellax py-0">
     <div class="slideshow">
         <div class="slideshow__deco"></div>
 
