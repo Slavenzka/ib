@@ -17,6 +17,7 @@ class CreateWorksTable extends Migration
             $table->increments('id');
             $table->string('slug')->unique();
             $table->unsignedInteger('type_id');
+            $table->boolean('in_slideshow')->default(1);
             $table->timestamps();
         });
     }

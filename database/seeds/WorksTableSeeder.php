@@ -13,7 +13,7 @@ class WorksTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 10; $i > 0; $i--) {
+        for ($i = 5; $i > 0; $i--) {
             $title = $faker->words(rand(2, 6), true);
             $work = App\Models\Work\Work::create([
                 'slug' => str_slug($title),
@@ -30,15 +30,13 @@ class WorksTableSeeder extends Seeder
                 ]);
             }
 
-            $work->clearMediaCollection('works');
+            $work->clearMediaCollection('preview');
             $work->addMediaFromUrl($faker->imageUrl(1000, 1000, 'abstract'))
-                 ->toMediaCollection('works');
+                 ->toMediaCollection('preview');
 
-            $work->clearMediaCollection('gallery');
-            for ($j = rand(2, 4); $j > 0; $j--) {
-                $work->addMediaFromUrl($faker->imageUrl(1000, 1000, 'business'))
-                     ->toMediaCollection('gallery');
-            }
+            $work->clearMediaCollection('work');
+            $work->addMediaFromUrl($faker->imageUrl(1000, 1000, 'business'))
+                 ->toMediaCollection('work');
         }
     }
 }

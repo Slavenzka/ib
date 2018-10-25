@@ -30,4 +30,6 @@
         @endforelse
     </div>
 
+    {{ $briefs->links() }}
+
 @endsection

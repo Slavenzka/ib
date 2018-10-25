@@ -4,6 +4,7 @@ new Vue({
     el: '#app',
     components: {
         ImageUploader: require('./components/SingleImageUploader'),
+        Wysiwyg: require('./components/Wysiwyg')
     },
     mounted() {
         const notification = document.querySelectorAll('.notification');

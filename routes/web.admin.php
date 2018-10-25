@@ -17,6 +17,7 @@ Route::group([
     ], function () {
 
         Route::get('/', 'BriefController@index')->name('.index');
+        Route::get('{brief}/edit', 'BriefController@edit')->name('.edit');
         Route::get('{brief}', 'BriefController@show')->name('.show');
 
     });
@@ -27,6 +28,11 @@ Route::group([
     ], function () {
 
         Route::get('/', 'WorkController@index')->name('.index');
+        Route::get('create', 'WorkController@create')->name('.create');
+        Route::post('create', 'WorkController@store')->name('.store');
+        Route::get('{work}/edit', 'WorkController@edit')->name('.edit');
+        Route::patch('{work}', 'WorkController@update')->name('.update');
+        Route::delete('{work}', 'WorkController@destroy')->name('.delete');
 
     });
 

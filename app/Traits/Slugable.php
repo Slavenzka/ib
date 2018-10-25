@@ -20,7 +20,8 @@ trait Slugable
      */
     public function setSlugAttribute($value)
     {
-        if (static::whereSlug($slug = str_slug($value))->exists()) {
+        if (static::whereSlug($slug = str_slug($value))->exists()
+            && static::whereSlug(str_slug($value))->count() > 1) {
             $slug = $this->incrementSlug($slug);
         }
         $this->attributes['slug'] = $slug;
@@ -34,12 +35,7 @@ trait Slugable
      */
     protected function incrementSlug($slug)
     {
-        $max = static::whereTitle($this->title)->latest('id')->value('slug');
-        if (is_numeric($max[-1])) {
-            return preg_replace_callback('/(\d+)$/', function ($matches) {
-                return $matches[1] + 1;
-            }, $max);
-        }
-        return "{$slug}-2";
+        $id = static::latest('id')->value('id');
+        return "{$slug}-{$id}";
     }
 }

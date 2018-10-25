@@ -3,6 +3,7 @@
 namespace App\Models\Work;
 
 use App\Traits\Slugable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
@@ -19,12 +20,18 @@ class Work extends Model implements HasMedia
     protected $fillable = [
         'slug',
         'type_id',
+        'in_slideshow'
+    ];
+
+    protected $casts = [
+        'in_slideshow' => 'boolean'
     ];
 
     protected $appends = [
         'title',
         'description',
         'body',
+        'image_medium',
     ];
 
     protected $with = [
@@ -57,7 +64,7 @@ class Work extends Model implements HasMedia
      */
     public function getTitleAttribute()
     {
-        return $this->translate()->first()->title;
+        return $this->translate()->value('title');
     }
 
     /**
@@ -65,7 +72,7 @@ class Work extends Model implements HasMedia
      */
     public function getDescriptionAttribute()
     {
-        return $this->translate()->first()->description;
+        return $this->translate()->value('description');
     }
 
     /**
@@ -73,7 +80,7 @@ class Work extends Model implements HasMedia
      */
     public function getBodyAttribute()
     {
-        return $this->translate()->first()->body;
+        return $this->translate()->value('body');
     }
 
     /**
@@ -81,15 +88,7 @@ class Work extends Model implements HasMedia
      */
     public function getImageMediumAttribute()
     {
-        return $this->getFirstMediaUrl('works', 'medium');
-    }
-
-    /**
-     * @return string
-     */
-    public function getImageLargeAttribute()
-    {
-        return $this->getFirstMediaUrl('works', 'large');
+        return asset($this->getFirstMediaUrl('preview', 'medium'));
     }
 
     /**
@@ -98,35 +97,39 @@ class Work extends Model implements HasMedia
     public function registerMediaCollections()
     {
         $this
-            ->addMediaCollection('works')
+            ->addMediaCollection('preview')
             ->registerMediaConversions(function (Media $media) {
-                $this
-                    ->addMediaConversion('thumb')
-                    ->keepOriginalImageFormat()
-                    ->fit(Manipulations::FIT_CONTAIN, 200, 200)
-                    ->width(200)
-                    ->height(200);
                 $this
                     ->addMediaConversion('medium')
                     ->keepOriginalImageFormat()
                     ->width(1140)
-                    ->height(1140);
+                    ->height(1140)
+                    ->sharpen(10)
+                    ->nonOptimized();;
             });
 
         $this
-            ->addMediaCollection('gallery')
+            ->addMediaCollection('work')
             ->registerMediaConversions(function (Media $media) {
-                $this
-                    ->addMediaConversion('thumb')
-                    ->keepOriginalImageFormat()
-                    ->fit(Manipulations::FIT_CONTAIN, 200, 200)
-                    ->width(200)
-                    ->height(200);
                 $this
                     ->addMediaConversion('large')
                     ->keepOriginalImageFormat()
                     ->width(1980)
-                    ->height(1980);
+                    ->height(1980)
+                    ->sharpen(10)
+                    ->nonOptimized();
             });
+    }
+
+    /**
+     * Boot
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->latest();
+        });
     }
 }

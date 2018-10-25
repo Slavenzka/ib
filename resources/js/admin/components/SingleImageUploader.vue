@@ -8,7 +8,7 @@
 
             <img :src="image" v-else>
 
-            <input type="file" name="image" id="image" @change="handleImage">
+            <input type="file" :name="!!name ? name : 'image'" id="image" @change="handleImage">
 
             <a @click.prevent="removeImage" v-if="image !== ''"
                class="btn btn-danger btn-delete d-flex justify-content-center align-items-center">
@@ -31,7 +31,8 @@
             },
             imageId: {
                 type: String
-            }
+            },
+            name: String
         },
         data() {
             return {

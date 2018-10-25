@@ -1,8 +1,6 @@
 <template>
-    <div class="form-group">
-        <label v-text="label" v-if="label"></label>
+    <div>
         <input type="hidden" :name="name" :value="data.html">
-
         <quill-editor
             :content="content"
             :options="editorOptions"
@@ -21,7 +19,6 @@
                 type: String,
                 default: () => 'body'
             },
-            label: String,
             content: {
                 type: String,
                 default: () => ''

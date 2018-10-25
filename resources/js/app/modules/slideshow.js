@@ -252,9 +252,6 @@ import charming from 'charming';
             this.DOM.el.classList.add('slide--current', 'slide--visible');
             // Position it on the current´s position.
             this.position(isContentOpen ? 5 : 2);
-            // if (this.DOM.el.dataset.background) {
-            //     document.querySelector('.slideshow__back').style.backgroundImage = `url(${this.DOM.el.dataset.background})`;
-            // }
         }
 
         // Position the slide on the left side.
