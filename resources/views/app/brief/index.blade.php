@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <section id="brief" class="content">
-        <div class="container">
+    <section id="brief">
+        <div class="container content">
 
             <div class="maw-lg-80 mx-auto">
                 <form action="{{ route('app.brief.store') }}" method="post">
