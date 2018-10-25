@@ -19,16 +19,10 @@
             <div class="content-entry mt-10">
                 {!! $work->body !!}
 
-                @if ($work->hasMedia('gallery'))
-                    <div class="gallery">
-                        @foreach($work->getMedia('gallery') as $media)
-                            <div class="gallery-item">
-                                <div class="gallery-item__deco"></div>
-                                <img src="{!! $media->getFullUrl() !!}" class="gallery-item__image" alt="">
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
+                <div class="gallery-item">
+                    <div class="gallery-item__deco"></div>
+                    <img src="{!! $work->getFullUrl('work') !!}" class="gallery-item__image" alt="">
+                </div>
 
                 <div class="text-center mt-8">
                     <revealer :params="{direction: 'bt'}">
