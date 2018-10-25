@@ -25,6 +25,7 @@
                             {{ $work->title }}
                         </a>
                     </h4>
+                    <p class="mb-0">{{ $work->created_at->format('d.m.Y, H:i') }}</p>
                 </article>
             </div>
         @empty
