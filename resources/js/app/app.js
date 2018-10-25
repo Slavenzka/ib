@@ -1,7 +1,3 @@
-document.documentElement.className = "js";
-document.body.classList.remove('loading');
-require('./modules/slideshow');
-
 import './bootstrap';
 import Vue from 'vue';
 import VueBlockReveal from 'vue-block-reveal';
@@ -17,7 +13,10 @@ new Vue({
     components: {
         Revealer,
     },
-    mounted() {
+    created() {
+        document.documentElement.className = "js";
+        document.body.classList.remove('loading');
+        require('./modules/slideshow');
         require('./modules/parallax');
         require('./modules/forms');
         require('./modules/nav');
