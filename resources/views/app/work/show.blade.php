@@ -16,15 +16,19 @@
                 </revealer>
             </h4>
 
-            <div class="content-entry mt-10">
-                {!! $work->body !!}
-            </div>
+            @if ($work->body)
+                <div class="content-entry my-10">
+                    {!! $work->body !!}
+                </div>
+            @endif
+        </div>
 
-            <div class="gallery-item my-8">
-                <div class="gallery-item__deco"></div>
-                <img src="{!! $work->getFirstMediaUrl('work') !!}" class="gallery-item__image" alt="">
-            </div>
+        <div class="gallery-item my-10 px-2 px-lg-8">
+            <div class="gallery-item__deco"></div>
+            <img src="{!! $work->getFirstMediaUrl('work') !!}" class="gallery-item__image" alt="">
+        </div>
 
+        <div class="container">
             <div class="text-center mt-8">
                 <revealer :params="{direction: 'bt'}">
                     <a href="{{ route('app.brief.index') }}" class="button button--primary">
