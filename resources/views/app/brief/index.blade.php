@@ -129,18 +129,24 @@
                             <div class="control__label-static">@lang('page.brief.design.f2')</div>
                             <div class="grid">
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="design[f2]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="design[f2]"
+                                               class="custom-control-input" id="df2p"
                                                value="@lang('page.brief.variants.yes')">
-                                        @lang('page.brief.variants.yes')
-                                    </label>
+                                        <label class="custom-control-label" for="df2p">
+                                            @lang('page.brief.variants.yes')
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="design[f2]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="design[f2]"
+                                               class="custom-control-input" id="df2n"
                                                value="@lang('page.brief.variants.no')">
-                                        @lang('page.brief.variants.no')
-                                    </label>
+                                        <label class="custom-control-label" for="df2n">
+                                            @lang('page.brief.variants.no')
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -151,18 +157,24 @@
                             <div class="control__label-static">@lang('page.brief.design.f3')</div>
                             <div class="grid">
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="design[f3]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="design[f3]"
+                                               class="custom-control-input" id="df3p"
                                                value="@lang('page.brief.variants.yes')">
-                                        @lang('page.brief.variants.yes')
-                                    </label>
+                                        <label class="custom-control-label" for="df3p">
+                                            @lang('page.brief.variants.yes')
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="design[f3]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="design[f3]"
+                                               class="custom-control-input" id="df3n"
                                                value="@lang('page.brief.variants.no')">
-                                        @lang('page.brief.variants.no')
-                                    </label>
+                                        <label class="custom-control-label" for="df3n">
+                                            @lang('page.brief.variants.no')
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -177,18 +189,24 @@
                             <div class="control__label-static">@lang('page.brief.hosting.f1.label')</div>
                             <div class="grid">
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="hosting[f1.label]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="hosting[f1.label]"
+                                               class="custom-control-input" id="hf1p"
                                                value="@lang('page.brief.hosting.f1.yes')">
-                                        @lang('page.brief.hosting.f1.yes')
-                                    </label>
+                                        <label class="custom-control-label" for="hf1p">
+                                            @lang('page.brief.hosting.f1.yes')
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="c">
-                                    <label>
-                                        <input type="radio" name="hosting[f1.label]" class="control__input mr-2"
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="radio" name="hosting[f1.label]"
+                                               class="custom-control-input" id="hf1n"
                                                value="@lang('page.brief.hosting.f1.no')">
-                                        @lang('page.brief.hosting.f1.no')
-                                    </label>
+                                        <label class="custom-control-label" for="hf1n">
+                                            @lang('page.brief.hosting.f1.no')
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
@@ -199,25 +217,25 @@
                                 <input id="f18" type="text" name="hosting[f2]" class="control__input">
                             </div>
 
-                            <div class="control">
-                                <label class="control__label-static" for="#f19">@lang('page.brief.hosting.f3')</label>
-                                <div class="grid">
-                                    <div class="c">
-                                        <label>
-                                            <input type="radio" name="hosting[f3]" class="control__input mr-2"
-                                                   value="@lang('page.brief.variants.yes')">
-                                            @lang('page.brief.variants.yes')
-                                        </label>
-                                    </div>
-                                    <div class="c">
-                                        <label>
-                                            <input type="radio" name="hosting[f3]" class="control__input mr-2"
-                                                   value="@lang('page.brief.variants.no')">
-                                            @lang('page.brief.variants.no')
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="control">--}}
+                                {{--<label class="control__label-static" for="#f19">@lang('page.brief.hosting.f3')</label>--}}
+                                {{--<div class="grid">--}}
+                                    {{--<div class="c">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="hosting[f3]" class="control__input mr-2"--}}
+                                                   {{--value="@lang('page.brief.variants.yes')">--}}
+                                            {{--@lang('page.brief.variants.yes')--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="c">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="hosting[f3]" class="control__input mr-2"--}}
+                                                   {{--value="@lang('page.brief.variants.no')">--}}
+                                            {{--@lang('page.brief.variants.no')--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="control">
                                 <label class="control__label-static" for="#f20">@lang('page.brief.hosting.f4')</label>
