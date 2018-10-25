@@ -4,14 +4,9 @@
     pointer-events: auto;
     margin-left: rem-calc(40);
 
-    &:hover {
-        .work-article__img {
-            filter: none;
-        }
-    }
-
     &__img {
         @extend .slide__img;
+        filter: none;
     }
 
     &__img-wrap {
