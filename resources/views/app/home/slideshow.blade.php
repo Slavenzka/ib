@@ -1,4 +1,4 @@
-<section class="rellax py-0">
+<section class="rellax py-0" data-rellax-speed="1">
     <div class="slideshow">
         <div class="slideshow__deco"></div>
 
