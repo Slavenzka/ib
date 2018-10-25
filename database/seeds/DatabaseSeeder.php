@@ -15,7 +15,12 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             UsersTableSeeder::class,
             WorkTypesTableSeeder::class,
-            WorksTableSeeder::class,
         ]);
+
+        if (config('app.env') === 'local') {
+            $this->call([
+                WorksTableSeeder::class,
+            ]);
+        }
     }
 }
