@@ -13,7 +13,7 @@
             <div class="grid works">
             @forelse($works as $work)
                 <div class="w-md-6/12">
-                    <article class="work-article">
+                    <a href="{{ route('app.work.show', $work) }}" class="work-article">
                         <div class="work-article__img-wrap">
                             <a href="{{ route('app.work.show', $work) }}" class="work-article__link"></a>
                             <div class="work-article__img" style="background-image: url({{ $work->image_medium }});"></div>
@@ -24,7 +24,7 @@
                             <h3 class="work-article__title">{{ $work->title }}</h3>
                             <h4 class="work-article__subtitle mb-0">{{ $work->description }}</h4>
                         </div>
-                    </article>
+                    </a>
                 </div>
             @empty
                 <div class="w-1">...</div>

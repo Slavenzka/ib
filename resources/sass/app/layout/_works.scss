@@ -37,9 +37,4 @@
     &__number {
         @extend .slide__number;
     }
-
-    &__link {
-        @extend .slide__link;
-        pointer-events: auto;
-    }
 }
