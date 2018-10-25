@@ -19,15 +19,15 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-#    ExpiresActive On
-#    ExpiresDefault "access plus 5 seconds"
-#    #кэшировать флэш и изображения на месяц
-#    ExpiresByType image/x-icon "access plus 2592000 seconds"
-#    ExpiresByType image/jpeg "access plus 2592000 seconds"
-#    ExpiresByType image/png "access plus 2592000 seconds"
-#    ExpiresByType image/gif "access plus 2592000 seconds"
-#    #кэшировать css, javascript и текстовые файлы на одну неделю
-#    ExpiresByType text/css "access plus 2592000 seconds"
-#    ExpiresByType text/javascript "access plus 2592000 seconds"
-#    ExpiresByType application/javascript "access plus 2592000 seconds"
+    ExpiresActive On
+    ExpiresDefault "access plus 5 seconds"
+    #кэшировать флэш и изображения на месяц
+    ExpiresByType image/x-icon "access plus 2592000 seconds"
+    ExpiresByType image/jpeg "access plus 2592000 seconds"
+    ExpiresByType image/png "access plus 2592000 seconds"
+    ExpiresByType image/gif "access plus 2592000 seconds"
+    #кэшировать css, javascript и текстовые файлы на одну неделю
+    ExpiresByType text/css "access plus 2592000 seconds"
+    ExpiresByType text/javascript "access plus 2592000 seconds"
+    ExpiresByType application/javascript "access plus 2592000 seconds"
 </IfModule>
