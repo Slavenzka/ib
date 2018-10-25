@@ -20,23 +20,23 @@ return [
         ],
         'tech' => [
             'title' => 'Наши возможности',
-            'subtitle' => 'Check our skills set to choose the one that suits you most',
+            'subtitle' => 'Посмотрите наши навыки, чтобы выбрать тот, который вам больше всего подходит.',
             'capabilities' => [
                 [
-                    'title' => 'Web Development',
+                    'title' => 'Веб-разработка',
                     'body' => 'The teams of Laravel & Wordpress ninjas are ready to step into the breach when you need them. Any kind of complexity… no boundaries here!',
                 ],
                 [
-                    'title' => 'Optimization and Audit',
+                    'title' => 'Оптимизация и аудит',
                     'body' => 'Life is full of curveballs and even the most efficient web solutions need to be updated form time to time. Our optimization & audit gurus will boost your site’s efficiency sky-high!',
                 ],
                 [
-                    'title' => 'Web Design',
-                    'body' => 'The look matters, you know. At Bineks we\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Bineks will be your helping hand.',
+                    'title' => 'Веб-дизайн',
+                    'body' => 'The look matters, you know. We\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Impression Bureau will be your helping hand.',
                 ],
                 [
-                    'title' => 'Customer Support',
-                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Bineks can not only develop projects from scratch, but also provide web any kind of dev assistance.',
+                    'title' => 'Поддержка пользователей',
+                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Impression Bureau can not only develop projects from scratch, but also provide web any kind of dev assistance.',
                 ],
             ],
         ],
