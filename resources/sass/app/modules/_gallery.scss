@@ -20,15 +20,15 @@
         bottom: 10px;
     }
 
-    &:nth-child(even) {
-        .gallery-item__image {
-            margin: 0 0 0 -1.85rem;
-        }
-    }
-
-    &:nth-child(odd) {
-        .gallery-item__image {
-            margin: 0 0 0 1.85rem;
-        }
-    }
+    //&:nth-child(even) {
+    //    .gallery-item__image {
+    //        margin: 0 0 0 -1.85rem;
+    //    }
+    //}
+    //
+    //&:nth-child(odd) {
+    //    .gallery-item__image {
+    //        margin: 0 0 0 1.85rem;
+    //    }
+    //}
 }
