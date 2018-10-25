@@ -55,13 +55,11 @@ class WorkController extends Controller
 
         if ($request->hasFile('preview')) {
             $work->addMediaFromRequest('preview')
-                 ->setFileName(sha1($request->file('preview')->getClientOriginalName() . time()))
                  ->toMediaCollection('preview');
         }
 
         if ($request->hasFile('work')) {
             $work->addMediaFromRequest('work')
-                 ->setFileName(sha1($request->file('preview')->getClientOriginalName() . time()))
                  ->toMediaCollection('work');
         }
 
@@ -105,14 +103,12 @@ class WorkController extends Controller
         if ($request->hasFile('preview')) {
             $work->clearMediaCollection('preview');
             $work->addMediaFromRequest('preview')
-                 ->setName(sha1($request->file('preview')->getClientOriginalName() . time()))
                  ->toMediaCollection('preview');
         }
 
         if ($request->hasFile('work')) {
             $work->clearMediaCollection('work');
             $work->addMediaFromRequest('work')
-                 ->setFileName(sha1($request->file('preview')->getClientOriginalName() . time()))
                  ->toMediaCollection('work');
         }
 
