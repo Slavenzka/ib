@@ -20,7 +20,7 @@
     RewriteRule ^ index.php [L]
 
     ExpiresActive On
-    ExpiresDefault "access plus 3600 seconds"
+    ExpiresDefault "access plus 5 seconds"
     #кэшировать флэш и изображения на месяц
     ExpiresByType image/x-icon "access plus 2592000 seconds"
     ExpiresByType image/jpeg "access plus 2592000 seconds"
