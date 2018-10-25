@@ -16,7 +16,9 @@
             <div class="col-md-6">
                 <article class="item p-4">
                     <div class="item-id">{{ $work->id }}</div>
-                    <img src="{{ $work->image_medium }}" alt="{{ $work->title }}">
+                    <a href="{{ route('admin.work.edit', $work) }}" class="d-block">
+                        <img src="{{ $work->getFirstMediaUrl('preview', 'small') }}" alt="{{ $work->title }}">
+                    </a>
 
                     <h4 class="mt-4 mb-0">
                         <a href="{{ route('admin.work.edit', $work) }}" class="underline">
