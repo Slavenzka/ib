@@ -13,7 +13,7 @@ new Vue({
     components: {
         Revealer,
     },
-    created() {
+    mounted() {
         document.documentElement.className = "js";
         document.body.classList.remove('loading');
         require('./modules/slideshow');
