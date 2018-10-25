@@ -2,7 +2,7 @@
     position: fixed;
     right: rem-calc(10);
     top: 1.625rem;
-    z-index: 100;
+    z-index: 1000;
 
     @media (min-width: map_get($grid-breakpoints, sm)) {
         right: 1.625rem;
