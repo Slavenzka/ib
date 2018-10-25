@@ -2,11 +2,11 @@
 
 return [
     'contact-us' => [
-        'title' => 'Contact Us',
+        'title' => 'Связаться с нами',
         'fields' => [
-            'name' => 'Your name',
-            'email' => 'E-mail address',
-            'phone' => 'Phone number',
+            'name' => 'Ваше имя',
+            'email' => 'E-mail',
+            'phone' => 'Номер телефона',
         ],
     ],
 ];

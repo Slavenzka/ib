@@ -38,7 +38,7 @@
                     <div class="w-md-6/12">
                         <h4 class="mb-8">
                             <revealer>
-                                Write to us
+                                @lang('page.footer.write_to_us')
                             </revealer>
                         </h4>
 

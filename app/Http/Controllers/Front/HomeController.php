@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(): View
     {
         return view('app.home.index', [
-            'works' => Work::latest()->take(5)->get(),
+            'works' => Work::latest()->whereInSlideshow(1)->take(5)->get(),
         ]);
     }
 

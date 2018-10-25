@@ -6,7 +6,7 @@
             </revealer>
         </h1>
 
-        <h2>
+        <h2 class="section-title--sm">
             <revealer class="text-light" :params="{direction: 'lr', bgcolor: '#353535'}">
                 @lang('page.home.promo.subtitle')
             </revealer>

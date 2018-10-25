@@ -1,8 +1,12 @@
 #nav {
     position: fixed;
-    right: 1.625rem;
+    right: rem-calc(10);
     top: 1.625rem;
     z-index: 100;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        right: 1.625rem;
+    }
 
     .lang, .nav-icon {
         position: relative;
@@ -50,6 +54,8 @@
     }
 
     .nav-item {
+        margin: rem-calc(10) 0;
+
         &:nth-child(even) a::before {
             transform: translateX(-150%);
         }
@@ -59,7 +65,7 @@
         }
 
         a {
-            font: 800 2.5rem/1.5 $font-family-headings;
+            font: 800 10vw/1 $font-family-headings;
             position: relative;
 
             &::before {

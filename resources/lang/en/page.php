@@ -137,4 +137,8 @@ return [
             'contact' => 'Contact form has been sent.',
         ],
     ],
+
+    'footer' => [
+        'write_to_us' => 'Write to us'
+    ]
 ];

@@ -1,4 +1,4 @@
-<header id="app-header" class="grid">
+<header id="app-header">
     <{!! app('router')->currentRouteName() !== 'app.home' ? 'a class="logo" href="'. url('/') . '"' : 'div class="logo"' !!}
     >
     <svg width="80" height="80">

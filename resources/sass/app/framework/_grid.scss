@@ -1,12 +1,24 @@
 .grid {
     @extend .flex;
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
+    margin-left: rem-calc(-10);
+    margin-right: rem-calc(-10);
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        margin-left: -$gutter/2;
+        margin-right: -$gutter/2;
+    }
 }
 
 %column {
-    padding-left: $gutter/2;
-    padding-right: $gutter/2;
+    width: 100%;
+    position: relative;
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        padding-left: $gutter/2;
+        padding-right: $gutter/2;
+    }
 }
 
 .c {
@@ -41,18 +53,24 @@
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
+    .w-#{$breakpoint}-\1 {
+        @extend %column;
+    }
+
+    @for $column from 1 through $columns {
+        .w-#{$breakpoint}-#{$column}\/#{$columns} {
+            @extend %column;
+        }
+    }
+
     @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
         .w-#{$breakpoint}-\1 {
-            padding-left: $gutter/2;
-            padding-right: $gutter/2;
             flex: 0 0 100%;
             max-width: 100%;
         }
 
         @for $column from 1 through $columns {
             .w-#{$breakpoint}-#{$column}\/#{$columns} {
-                padding-left: $gutter/2;
-                padding-right: $gutter/2;
                 flex: 0 0 (100% / $columns * $column);
                 max-width: 100% / $columns * $column;
             }

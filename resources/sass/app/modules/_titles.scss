@@ -1,8 +1,15 @@
 .section-title {
-    font-size: 6vw;
+    font-size: 11vw;
+
+    @media (min-width: map_get($grid-breakpoints, md)) {
+        font-size: 6vw;
+    }
 
     &--sm {
-        font-size: 3.5rem;
+        font-size: 1.625rem;
+        @media (min-width: map_get($grid-breakpoints, md)) {
+            font-size: 2.75rem;
+        }
     }
 
     &--xl {
