@@ -2,7 +2,7 @@
     @extend .slide;
     width: auto;
     pointer-events: auto;
-    margin-left: rem-calc(40);
+    margin: 0 0 2.5rem 2.5rem;
 
     &__img {
         @extend .slide__img;
@@ -19,6 +19,7 @@
 
     &__title-wrap {
         @extend .slide__title-wrap;
+        margin-bottom: -2.5rem;
     }
 
     &__title {

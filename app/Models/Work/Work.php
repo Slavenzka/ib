@@ -100,12 +100,17 @@ class Work extends Model implements HasMedia
             ->addMediaCollection('preview')
             ->registerMediaConversions(function (Media $media) {
                 $this
+                    ->addMediaConversion('small')
+                    ->keepOriginalImageFormat()
+                    ->width(620)
+                    ->height(620)
+                    ->nonOptimized();
+                $this
                     ->addMediaConversion('medium')
                     ->keepOriginalImageFormat()
                     ->width(1140)
                     ->height(1140)
-                    ->sharpen(20)
-                    ->nonOptimized();;
+                    ->nonOptimized();
             });
 
         $this
@@ -116,7 +121,6 @@ class Work extends Model implements HasMedia
                     ->keepOriginalImageFormat()
                     ->width(1980)
                     ->height(1980)
-                    ->sharpen(10)
                     ->nonOptimized();
             });
     }
