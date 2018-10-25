@@ -12,6 +12,9 @@ use Illuminate\View\View;
 
 class WorkController extends Controller
 {
+    /**
+     * @return View
+     */
     public function index(): View
     {
         return \view('admin.work.index', [
@@ -19,6 +22,9 @@ class WorkController extends Controller
         ]);
     }
 
+    /**
+     * @return View
+     */
     public function create(): View
     {
         return \view('admin.work.create', [
@@ -26,11 +32,16 @@ class WorkController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function store(Request $request): RedirectResponse
     {
         $work = Work::create([
             'type_id' => $request->get('type_id'),
             'slug' => $request->get('title')['en'],
+            'in_slideshow' => $request->get('in_slideshow'),
         ]);
 
         foreach (App::$LANGS as $lang) {
@@ -55,6 +66,10 @@ class WorkController extends Controller
         return \redirect()->route('admin.work.edit', $work);
     }
 
+    /**
+     * @param Work $work
+     * @return View
+     */
     public function edit(Work $work): View
     {
         return \view('admin.work.edit', [
@@ -63,11 +78,17 @@ class WorkController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param Work $work
+     * @return RedirectResponse
+     */
     public function update(Request $request, Work $work): RedirectResponse
     {
         $work->update([
             'type_id' => $request->get('type_id'),
             'slug' => $request->get('title')['en'],
+            'in_slideshow' => $request->get('in_slideshow'),
         ]);
 
         foreach (App::$LANGS as $lang) {
