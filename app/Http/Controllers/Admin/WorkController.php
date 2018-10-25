@@ -105,7 +105,7 @@ class WorkController extends Controller
         if ($request->hasFile('preview')) {
             $work->clearMediaCollection('preview');
             $work->addMediaFromRequest('preview')
-                 ->setFileName(sha1($request->file('preview')->getClientOriginalName() . time()))
+                 ->setName(sha1($request->file('preview')->getClientOriginalName() . time()))
                  ->toMediaCollection('preview');
         }
 
