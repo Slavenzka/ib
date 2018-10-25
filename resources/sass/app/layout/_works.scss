@@ -1,8 +1,8 @@
 .work-article {
     @extend .slide;
-    width: 100%;
+    width: auto;
     pointer-events: auto;
-    margin-left: rem-calc(30);
+    margin-left: rem-calc(40);
 
     &:hover {
         .work-article__img {
