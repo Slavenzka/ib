@@ -23,16 +23,16 @@
                                 +380 68 862 4063
                             </a>
                         </p>
-                        <p class="flex">
-                            @foreach(\App\Models\App::$SOCIAL as $key => $item)
-                                <a href="{{ $item }}" class="{{ !$loop->last ? 'mr-3' : '' }}">
-                                    <svg width="20" height="20"
-                                         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;fill: #fff;">
-                                        <use xlink:href="#icon-{{ $key }}"></use>
-                                    </svg>
-                                </a>
-                            @endforeach
-                        </p>
+                        {{--<p class="flex">--}}
+                            {{--@foreach(\App\Models\App::$SOCIAL as $key => $item)--}}
+                                {{--<a href="{{ $item }}" class="{{ !$loop->last ? 'mr-3' : '' }}">--}}
+                                    {{--<svg width="20" height="20"--}}
+                                         {{--style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;fill: #fff;">--}}
+                                        {{--<use xlink:href="#icon-{{ $key }}"></use>--}}
+                                    {{--</svg>--}}
+                                {{--</a>--}}
+                            {{--@endforeach--}}
+                        {{--</p>--}}
                     </div>
 
                     <div class="w-md-6/12">
