@@ -7,15 +7,16 @@
 
 @import "framework/index";
 
-@import "layout/layout";
-@import "layout/header";
-@import "layout/content";
-@import "layout/promo";
-@import "layout/technologies";
-@import "layout/footer";
-
 @import "modules/loader";
 @import "modules/slideshow";
 @import "modules/titles";
 @import "modules/gallery";
 @import "modules/nav";
+
+@import "layout/layout";
+@import "layout/header";
+@import "layout/content";
+@import "layout/promo";
+@import "layout/technologies";
+@import "layout/works";
+@import "layout/footer";

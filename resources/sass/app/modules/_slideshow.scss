@@ -180,12 +180,12 @@
     transform: rotate(-135deg);
 }
 
-.js .slide__img-wrap,
-.js .slide__title-wrap,
-.js .slide__side {
-    opacity: 0;
-    pointer-events: none;
-}
+//.js .slide__img-wrap,
+//.js .slide__title-wrap,
+//.js .slide__side {
+//    opacity: 0;
+//    pointer-events: none;
+//}
 
 .js .slide--current .slide__img-wrap {
     opacity: 1;

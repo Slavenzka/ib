@@ -68,6 +68,10 @@
             font: 800 10vw/1 $font-family-headings;
             position: relative;
 
+            @media (min-width: map_get($grid-breakpoints, lg)) {
+                font-size: 5vw;
+            }
+
             &::before {
                 position: absolute;
                 left: -1rem;

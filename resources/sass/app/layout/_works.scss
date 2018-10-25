@@ -1,0 +1,41 @@
+.work-article {
+    @extend .slide;
+    width: 100%;
+    pointer-events: auto;
+    margin-left: rem-calc(30);
+
+    &__img {
+        @extend .slide__img;
+        &:hover {
+            filter: none;
+        }
+    }
+
+    &__img-wrap {
+        @extend .slide__img-wrap;
+    }
+
+    &__side {
+        @extend .slide__side;
+    }
+
+    &__title-wrap {
+        @extend .slide__title-wrap;
+    }
+
+    &__title {
+        @extend .slide__title;
+    }
+
+    &__subtitle {
+        @extend .slide__subtitle;
+    }
+
+    &__number {
+        @extend .slide__number;
+    }
+
+    &__link {
+        @extend .slide__link;
+    }
+}
