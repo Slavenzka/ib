@@ -21,7 +21,7 @@
 
                 <div class="gallery-item">
                     <div class="gallery-item__deco"></div>
-                    <img src="{!! $work->getFullUrl('work') !!}" class="gallery-item__image" alt="">
+                    <img src="{!! $work->getFirstMediaUrl('work') !!}" class="gallery-item__image" alt="">
                 </div>
 
                 <div class="text-center mt-8">
