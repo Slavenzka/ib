@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <section class="content">
-        <div class="container">
+    <section>
+        <div class="container content">
             <h1 class="page-title">
                 <revealer>
                     {{ $work->title }}
@@ -28,7 +28,7 @@
             <img src="{!! $work->getFirstMediaUrl('work') !!}" class="gallery-item__image" alt="">
         </div>
 
-        <div class="container">
+        <div class="container content">
             <div class="text-center mt-8">
                 <revealer :params="{direction: 'bt'}">
                     <a href="{{ route('app.brief.index') }}" class="button button--primary">
