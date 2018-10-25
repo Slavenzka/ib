@@ -28,7 +28,7 @@
             <img src="{!! $work->getFirstMediaUrl('work') !!}" class="gallery-item__image" alt="">
         </div>
 
-        <div class="container content">
+        <div class="container content pt-0">
             <div class="text-center mt-8">
                 <revealer :params="{direction: 'bt'}">
                     <a href="{{ route('app.brief.index') }}" class="button button--primary">
