@@ -33,3 +33,10 @@
         @extend .slide__number;
     }
 }
+
+.js .work-article__img-wrap,
+.js .work-article__title-wrap,
+.js .work-article__side {
+    opacity: 1;
+    pointer-events: auto;
+}
