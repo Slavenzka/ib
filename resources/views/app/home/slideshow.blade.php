@@ -27,3 +27,11 @@
         </svg>
     </button>
 </div>
+
+<div class="mt-8 text-center">
+    <revealer :params="{direction: 'tb'}">
+        <a href="{{ route('app.work.index') }}" class="button button--primary">
+            @lang('buttons.all_works')
+        </a>
+    </revealer>
+</div>

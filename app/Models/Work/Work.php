@@ -104,7 +104,7 @@ class Work extends Model implements HasMedia
                     ->keepOriginalImageFormat()
                     ->width(1140)
                     ->height(1140)
-                    ->sharpen(10)
+                    ->sharpen(20)
                     ->nonOptimized();;
             });
 
