@@ -55,15 +55,15 @@ class RouteServiceProvider extends ServiceProvider
             app()->setLocale('ru');
             $nav = [
                 [
-                    'route' => 'admin.brief.index',
-                    'compare' => 'admin.brief.*',
+                    'route' => 'admin.briefs.index',
+                    'compare' => 'admin.briefs.*',
                     'name' => 'Брифы',
                     'icon' => 'orders',
                     'unread' => Brief::query()->processing()->count(),
                 ],
                 [
-                    'route' => 'admin.work.index',
-                    'compare' => 'admin.work.*',
+                    'route' => 'admin.works.index',
+                    'compare' => 'admin.works.*',
                     'name' => 'Портфолио',
                     'icon' => 'products',
                 ],
@@ -74,8 +74,8 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'envelope',
                 ],
                 [
-                    'route' => 'admin.user.index',
-                    'compare' => 'admin.user.*',
+                    'route' => 'admin.users.index',
+                    'compare' => 'admin.users.*',
                     'name' => 'Пользователи',
                     'icon' => 'users',
                 ],
