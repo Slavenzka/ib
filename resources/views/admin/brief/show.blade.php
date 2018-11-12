@@ -32,13 +32,12 @@
             @endif
         @endforeach
 
-        <div class="row align-items-end">
+        <div class="row align-items-end mt-4">
             <div class="col-auto">
                 <button class="btn btn-primary">Обновить</button>
             </div>
             <div class="col-auto">
-                <label for="status">Статус</label>
-                <select name="status" id="status" class="form-control w-auto">
+                <select name="status" id="status" class="form-control pr-3 w-auto">
                     @foreach(\App\Models\Contact\Brief::$STATUSES as $key => $status)
                         <option value="{{ $key }}" {{ $brief->status === $key ? 'selected' : '' }}>
                             {{ $status }}
