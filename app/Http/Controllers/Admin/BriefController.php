@@ -28,6 +28,6 @@ class BriefController extends Controller
 
     public function update(Request $request, Brief $brief)
     {
-        dd($request);
+        dd($request->all());
     }
 }
