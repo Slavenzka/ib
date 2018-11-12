@@ -40,6 +40,8 @@ class BriefController extends Controller
 
         $status = $request->status;
 
+        dd(compact('body', 'status'));
+
         $brief->update(compact('body', 'status'));
 
         return \back();
