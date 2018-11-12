@@ -32,8 +32,8 @@
             @endif
         @endforeach
 
-        <div class="row">
-            <div class="col">
+        <div class="row align-items-end">
+            <div class="col-auto">
                 <button class="btn btn-primary">Обновить</button>
             </div>
             <div class="form-group mb-0 col">
