@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact\Brief;
+use Illuminate\Http\Request;
 
 class BriefController extends Controller
 {
@@ -23,5 +24,10 @@ class BriefController extends Controller
         });
 
         return \view('admin.brief.show', compact('brief'));
+    }
+
+    public function update(Request $request, Brief $brief)
+    {
+        dd($request);
     }
 }

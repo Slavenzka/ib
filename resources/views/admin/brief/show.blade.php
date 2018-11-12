@@ -2,30 +2,35 @@
 
 @section('content')
 
-    @foreach($brief->body as $group => $column)
-        <h3>{{ \App\Models\Contact\Brief::$GROUPS[$group] }}</h3>
+    <form action="{{ route('admin.brief.update', $brief) }}" method="post">
+        @csrf
+        @method('patch')
 
-        <ul class="list-unstyled">
-            @foreach($column as $key => $item)
-                <li class="mb-2">
-                    @if($item)
-                        <fieldset>
-                            <legend class="mb-0 text-muted small">
-                                {{ trans("page.brief.{$group}.{$key}") }}
-                            </legend>
+        @foreach($brief->body as $group => $column)
+            <h3>{{ \App\Models\Contact\Brief::$GROUPS[$group] }}</h3>
 
-                            <textarea name="{{ $group.'['.$key.']' }}"
-                                      rows="{{ strlen($item) > 100 ? '5' : '' }}"
-                                      class="form-control">{{ $item }}</textarea>
-                        </fieldset>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
+            <ul class="list-unstyled">
+                @foreach($column as $key => $item)
+                    <li class="mb-2">
+                        @if($item)
+                            <fieldset>
+                                <legend class="mb-0 text-muted small">
+                                    {{ trans("page.brief.{$group}.{$key}") }}
+                                </legend>
 
-        @if (!$loop->last)
-            <hr>
-        @endif
-    @endforeach
+                                <textarea name="{{ $group.'['.$key.']' }}"
+                                          rows="{{ strlen($item) > 100 ? '4' : (strlen($item) > 200 ? '6' : '') }}"
+                                          class="form-control">{{ $item }}</textarea>
+                            </fieldset>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+
+            @if (!$loop->last)
+                <hr>
+            @endif
+        @endforeach
+    </form>
 
 @endsection

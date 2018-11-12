@@ -19,6 +19,7 @@ Route::group([
         Route::get('/', 'BriefController@index')->name('.index');
         Route::get('{brief}/edit', 'BriefController@edit')->name('.edit');
         Route::get('{brief}', 'BriefController@show')->name('.show');
+        Route::patch('{brief}', 'BriefController@update')->name('.update');
 
     });
 
