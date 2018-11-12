@@ -32,15 +32,20 @@
             @endif
         @endforeach
 
-        <div class="form-group">
-            <label for="status">Статус</label>
-            <select name="status" id="status" class="form-control">
-                @foreach(\App\Models\Contact\Brief::$STATUSES as $key => $status)
-                    <option value="{{ $key }}" {{ $brief->status === $key ? 'selected' : '' }}>
-                        {{ $status }}
-                    </option>
-                @endforeach
-            </select>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary">Обновить</button>
+            </div>
+            <div class="form-group mb-0 col">
+                <label for="status">Статус</label>
+                <select name="status" id="status" class="form-control">
+                    @foreach(\App\Models\Contact\Brief::$STATUSES as $key => $status)
+                        <option value="{{ $key }}" {{ $brief->status === $key ? 'selected' : '' }}>
+                            {{ $status }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
         </div>
     </form>
 
