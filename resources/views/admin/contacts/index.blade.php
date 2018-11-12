@@ -26,7 +26,7 @@
                 </article>
             </div>
         @empty
-            <div class="col">Контактные формы пока не заполнены...</div>
+            <div class="col">Контактные формы пока никто не заполнял...</div>
         @endforelse
     </div>
 
