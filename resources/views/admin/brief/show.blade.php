@@ -14,7 +14,9 @@
                                 {{ trans("page.brief.{$group}.{$key}") }}
                             </legend>
 
-                            <textarea name="{{ $group.'['.$key.']' }}" class="form-control">{{ $item }}</textarea>
+                            <textarea name="{{ $group.'['.$key.']' }}"
+                                      rows="{{ strlen($item) > 100 ? '5' : '' }}"
+                                      class="form-control">{{ $item }}</textarea>
                         </fieldset>
                     @endif
                 </li>
