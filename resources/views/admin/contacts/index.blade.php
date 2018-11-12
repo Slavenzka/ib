@@ -26,7 +26,7 @@
                 </article>
             </div>
         @empty
-            <div class="col">Брифов пока нет...</div>
+            <div class="col">Контактные формы пока не заполнены...</div>
         @endforelse
     </div>
 
