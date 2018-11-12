@@ -68,6 +68,12 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'products',
                 ],
                 [
+                    'route' => 'admin.contacts.index',
+                    'compare' => 'admin.contacts.*',
+                    'name' => 'Контакты',
+                    'icon' => 'envelope',
+                ],
+                [
                     'route' => 'admin.user.index',
                     'compare' => 'admin.user.*',
                     'name' => 'Пользователи',

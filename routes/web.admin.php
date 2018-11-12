@@ -55,4 +55,11 @@ Route::group([
 
     });
 
+    Route::group([
+        'as' => '.contacts',
+        'prefix' => 'contacts'
+    ], function() {
+        Route::get('/', 'ContactsController@index')->name('.index');
+    });
+
 });
