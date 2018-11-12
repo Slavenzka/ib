@@ -36,9 +36,9 @@
             <div class="col-auto">
                 <button class="btn btn-primary">Обновить</button>
             </div>
-            <div class="form-group mb-0 col">
+            <div class="col-auto">
                 <label for="status">Статус</label>
-                <select name="status" id="status" class="form-control">
+                <select name="status" id="status" class="form-control w-auto">
                     @foreach(\App\Models\Contact\Brief::$STATUSES as $key => $status)
                         <option value="{{ $key }}" {{ $brief->status === $key ? 'selected' : '' }}>
                             {{ $status }}
