@@ -30,6 +30,6 @@
         @endforelse
     </div>
 
-    {{ $briefs->links() }}
+    {{ $contacts->links() }}
 
 @endsection
