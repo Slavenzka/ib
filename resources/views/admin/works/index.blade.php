@@ -5,7 +5,7 @@
     <div class="mb-5 d-flex align-items-center">
         <h1 class="mb-0 ">Работы</h1>
         <div class="ml-3">
-            <a href="{{ route('admin.work.create') }}" class="btn btn-secondary">
+            <a href="{{ route('admin.works.create') }}" class="btn btn-secondary">
                 Добавить новую
             </a>
         </div>
@@ -16,12 +16,12 @@
             <div class="col-md-6">
                 <article class="item p-4">
                     <div class="item-id">{{ $work->id }}</div>
-                    <a href="{{ route('admin.work.edit', $work) }}" class="d-block">
+                    <a href="{{ route('admin.works.edit', $work) }}" class="d-block">
                         <img src="{{ $work->getFirstMediaUrl('preview', 'small') }}" alt="{{ $work->title }}">
                     </a>
 
                     <h4 class="mt-4 mb-0">
-                        <a href="{{ route('admin.work.edit', $work) }}" class="underline">
+                        <a href="{{ route('admin.works.edit', $work) }}" class="underline">
                             {{ $work->title }}
                         </a>
                     </h4>

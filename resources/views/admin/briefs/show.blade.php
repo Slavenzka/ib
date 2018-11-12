@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="{{ route('admin.brief.update', $brief) }}" method="post">
+    <form action="{{ route('admin.briefs.update', $brief) }}" method="post">
         @csrf
         @method('patch')
 
@@ -15,7 +15,7 @@
                         @if($item)
                             <fieldset>
                                 <legend class="mb-0 text-muted small">
-                                    {{ trans("page.brief.{$group}.{$key}") }}
+                                    {{ trans("page.briefs.{$group}.{$key}") }}
                                 </legend>
 
                                 <textarea name="{{ $group.'['.$key.']' }}"

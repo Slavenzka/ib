@@ -10,7 +10,7 @@ class BriefController extends Controller
 {
     public function index()
     {
-        return \view('admin.brief.index', [
+        return \view('admin.briefs.index', [
             'briefs' => Brief::latest()->paginate(20),
         ]);
     }
@@ -23,7 +23,7 @@ class BriefController extends Controller
             return count(array_filter(array_values($i)));
         });
 
-        return \view('admin.brief.show', compact('brief'));
+        return \view('admin.briefs.show', compact('brief'));
     }
 
     public function update(Request $request, Brief $brief)

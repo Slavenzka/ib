@@ -17,7 +17,7 @@ class WorkController extends Controller
      */
     public function index(): View
     {
-        return \view('admin.work.index', [
+        return \view('admin.works.index', [
             'works' => Work::paginate(20),
         ]);
     }
@@ -27,7 +27,7 @@ class WorkController extends Controller
      */
     public function create(): View
     {
-        return \view('admin.work.create', [
+        return \view('admin.works.create', [
             'types' => WorkType::latest()->get(),
         ]);
     }
@@ -63,7 +63,7 @@ class WorkController extends Controller
                  ->toMediaCollection('work');
         }
 
-        return \redirect()->route('admin.work.edit', $work);
+        return \redirect()->route('admin.works.edit', $work);
     }
 
     /**
@@ -72,7 +72,7 @@ class WorkController extends Controller
      */
     public function edit(Work $work): View
     {
-        return \view('admin.work.edit', [
+        return \view('admin.works.edit', [
             'work' => $work,
             'types' => WorkType::latest()->get(),
         ]);
@@ -112,6 +112,6 @@ class WorkController extends Controller
                  ->toMediaCollection('work');
         }
 
-        return \redirect()->route('admin.work.edit', $work);
+        return \redirect()->route('admin.works.edit', $work);
     }
 }

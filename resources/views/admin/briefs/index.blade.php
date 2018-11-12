@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col">
                             <h4>
-                                <a href="{{ route('admin.brief.show', $brief) }}">
+                                <a href="{{ route('admin.briefs.show', $brief) }}">
                                     {{ ucfirst($brief->body['contact']['f1']) }}
                                 </a>
                             </h4>

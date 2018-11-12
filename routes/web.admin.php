@@ -12,8 +12,8 @@ Route::group([
     Route::get('/', 'DashboardController@index')->name('.index');
 
     Route::group([
-        'as' => '.brief',
-        'prefix' => 'brief',
+        'as' => '.briefs',
+        'prefix' => 'briefs',
     ], function () {
         Route::get('/', 'BriefController@index')->name('.index');
         Route::get('{brief}/edit', 'BriefController@edit')->name('.edit');
@@ -22,8 +22,8 @@ Route::group([
     });
 
     Route::group([
-        'as' => '.work',
-        'prefix' => 'work',
+        'as' => '.works',
+        'prefix' => 'works',
     ], function () {
         Route::get('/', 'WorkController@index')->name('.index');
         Route::get('create', 'WorkController@create')->name('.create');
@@ -41,8 +41,8 @@ Route::group([
     });
 
     Route::group([
-        'as' => '.user',
-        'prefix' => 'user',
+        'as' => '.users',
+        'prefix' => 'users',
     ], function () {
         Route::get('/', 'UserController@index')->name('.index');
     });
