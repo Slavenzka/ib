@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Contact\Brief;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
@@ -78,12 +79,14 @@ class RouteServiceProvider extends ServiceProvider
                     'compare' => 'admin.users.*',
                     'name' => 'Пользователи',
                     'icon' => 'users',
+                    'can_activate' => Auth::user()->hasRole('admin')
                 ],
                 [
                     'route' => 'admin.settings.index',
                     'compare' => 'admin.settings.*',
                     'name' => 'Настройки',
                     'icon' => 'settings',
+                    'can_activate' => Auth::user()->hasRole('admin')
                 ],
             ];
             View::share('nav', $nav);
