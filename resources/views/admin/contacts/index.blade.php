@@ -14,7 +14,13 @@
                                     {{ $contact->name }}
                                 </a>
                             </h4>
-                            <p class="mb-0">{{ $brief->created_at->format('d.m.Y \в H:i') }}</p>
+                            <p class="mb-0">{{ $contact->created_at->format('d.m.Y \в H:i') }}</p>
+                        </div>
+                        <div class="col-auto">
+                            <span
+                                class="py-1 px-2 small rounded bg-{{ $contact->status == 'declined' ? 'danger' : ($brief->status == 'finished' ? 'success' : 'warning') }}">
+                            {{ \App\Models\Contact\Brief::$STATUSES[$brief->status] }}
+                            </span>
                         </div>
                     </div>
                 </article>
