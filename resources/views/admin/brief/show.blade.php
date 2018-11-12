@@ -13,7 +13,8 @@
                             <legend class="mb-0 text-muted small">
                                 {{ trans("page.brief.{$group}.{$key}") }}
                             </legend>
-                            <textarea name="{{ $group[$key] }}" class="form-control">{{ $item }}</textarea>
+                            {{ $item }}
+                            {{--<textarea name="{{ $group[$key] }}" class="form-control"></textarea>--}}
                         </fieldset>
                     @endif
                 </li>
