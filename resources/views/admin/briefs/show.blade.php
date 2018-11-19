@@ -15,7 +15,7 @@
                         @if($item)
                             <fieldset>
                                 <legend class="mb-0 text-muted small">
-                                    {{ trans("page.briefs.{$group}.{$key}") }}
+                                    {{ trans("page.brief.{$group}.{$key}") }}
                                 </legend>
 
                                 <textarea name="{{ $group.'['.$key.']' }}"
