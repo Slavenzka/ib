@@ -21,8 +21,8 @@
                               :params="{direction: {{ "'$dir'" }}}">
                         <img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}">
                     </revealer>
-                    <div>
-                        <small class="lh-1">{{ ucfirst($tech) }}</small>
+                    <div class="lh-1 small">
+                        {{ ucfirst($tech) }}
                     </div>
                 </div>
             @endforeach
