@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="content">
+    <section class="content py-5 my-5">
         <div class="container">
             <revealer :params="{direction: 'rl'}">
                 @lang('page.about.intro')

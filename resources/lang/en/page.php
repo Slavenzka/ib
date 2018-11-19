@@ -78,19 +78,19 @@ return [
         'design' => [
             'title' => 'Design',
             'f1' => 'Examples of sites which design you like',
-            'f2' => 'Существует ли фирменный стиль и логотип, который необходимо использовать при разработке дизайна?',
-            'f3' => 'Можете ли вы предоставить дополнительные графические материалы о компании, которые смогут помочь нам в работе?',
+            'f2' => 'Do you have personal style or logo, which we have to use in work?',
+            'f3' => 'Can you give us more graphic materials about company, which could help us in our work?',
         ],
         'hosting' => [
-            'title' => 'Хостинг и доменное имя',
+            'title' => 'Hosting and domain name',
             'f1' => [
-                'label' => 'Требуется ли регистрация доменного имени',
-                'yes' => 'Да, сделайте это для нас',
-                'no' => 'Нет, доменное имя уже зарегистрировано (в процессе)',
+                'label' => 'If needs the registration of domain name',
+                'yes' => 'Yes, do it for us, please',
+                'no' => 'No, already done (or in process)',
             ],
-            'f2' => 'Доменное имя или URL, где будет располагаться проект',
-            'f3' => 'Требуется ли хостинг',
-            'f4' => 'Если хостинг будет предоставлен, укажите его параметры',
+            'f2' => 'Domain name or URL which the project placed on',
+            'f3' => 'Hosting needed?',
+            'f4' => 'If you have the hosting note its options',
         ],
         'variants' => [
             'yes' => 'Yes',
