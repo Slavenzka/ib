@@ -17,7 +17,7 @@
                 $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp
                 <revealer class="tech-item flex justify-center m-4" :params="{direction: {{ "'$dir'" }}}">
-                    <div class="mb-2 squire-50"><img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}"></div>
+                    <img src="{{ asset('images/icons/'.$key.'.svg') }}" class="squire-50" alt="{{ $tech }}" title="{{ $tech }}">
                     <small class="lh-1">{{ ucfirst($tech) }}</small>
                 </revealer>
             @endforeach
