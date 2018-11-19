@@ -11,7 +11,7 @@
             </revealer>
         </p>
 
-        <div class="flex align-center justify-center">
+        <div class="flex justify-center text-center">
             @foreach(\App\Models\App::$TECHS as $key => $tech)
                 @php
                 $dir = array_random(['lr', 'rl', 'bt', 'tb']);
@@ -24,7 +24,7 @@
         </div>
 
         <div class="maw-lg-80 mx-auto">
-            <div class="grid mt-8 capabilities text-center">
+            <div class="grid mt-8 capabilities">
                 @foreach(trans('page.home.tech.capabilities') as $item)
                     <div class="w-md-6/12 capability">
                         <span class="capability__number mb-2">{{ $loop->iteration }}</span>
