@@ -20,7 +20,7 @@ class AdminUser
         /** @var User $user */
         $user = Auth::user();
 
-        if (!$user->hasRole('admin')) {
+        if (!$user->hasRole(['admin', 'manager'])) {
             return redirect()->route('app.home');
         }
 
