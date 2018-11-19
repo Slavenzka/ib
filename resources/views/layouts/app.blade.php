@@ -25,6 +25,7 @@
     <meta property="og:image" content="{{ asset('images/favicons/apple-touch-icon.png') }}"/>
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
+    <meta property="fb:app_id" content="357482571679823">
 
     <meta name="description"
           content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
@@ -43,6 +44,29 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="{{ asset('images/favicons/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '357482571679823',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.2'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </head>
 <body class="loading">
 @include('partials.app.loader')
