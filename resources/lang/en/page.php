@@ -19,12 +19,12 @@ return [
             'title' => 'Our latest works',
         ],
         'tech' => [
-            'title' => 'Our Capabilities',
+            'title' => 'Technologies',
             'subtitle' => 'Check our skills set to choose the one that suits you most',
             'capabilities' => [
                 [
                     'title' => 'Web Development',
-                    'body' => 'The teams of Laravel & Wordpress ninjas are ready to step into the breach when you need them. Any kind of complexity… no boundaries here!',
+                    'body' => 'The team of Laravel & Wordpress developers are ready to step into the breach when you need them. Any kind of complexity!',
                 ],
                 [
                     'title' => 'Optimization and Audit',
@@ -32,11 +32,11 @@ return [
                 ],
                 [
                     'title' => 'Web Design',
-                    'body' => 'The look matters, you know. At Bineks we\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Bineks will be your helping hand.',
+                    'body' => 'The look matters, you know. At Impression Bureau we\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Impression Bureau will be your helping hand.',
                 ],
                 [
                     'title' => 'Customer Support',
-                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Bineks can not only develop projects from scratch, but also provide web any kind of dev assistance.',
+                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Impression Bureau can not only develop projects from scratch, but also provide web any kind of dev assistance.',
                 ],
             ],
         ],
