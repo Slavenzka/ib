@@ -14,10 +14,12 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <meta property="og:title" content="{{ config('app.name', 'IB') . (isset($app_title) ? ' | ' . $app_title : '') }}"/>
-    <meta property="og:description" content='Профессиональная разработка, дизайн и маркетинг для веб-сайтов.'/>
+    <meta property="og:description" content="Профессиональная разработка, дизайн и маркетинг для веб-сайтов."/>
     <meta property="og:url" content="{{url()->current()}}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="{{ asset('images/favicons/apple-touch-icon.png') }}"/>
+    <meta property="og:image:width" content="180">
+    <meta property="og:image:height" content="180">
 
     <meta name="description" content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
     <meta name="keywords" content="создание сайтов, веб-студия, запорожье, разработка, студия">
