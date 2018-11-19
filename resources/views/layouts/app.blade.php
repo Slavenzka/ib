@@ -13,7 +13,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <meta property="og:title" content="{{ config('app.name', 'IB') . (isset($app_title) ? ' | ' . $app_title : '') }}"/>
+    @if (app('router')->currentRouteName() != 'app.home')
+        <meta property="og:title"
+              content="{{ config('app.name', 'IB') . (isset($app_title) ? ' | ' . $app_title : '') }}"/>
+    @else
+        <meta property="og:title" content="{{ config('app.name', 'IB') }}"/>
+    @endif
     <meta property="og:description" content="Профессиональная разработка, дизайн и маркетинг для веб-сайтов."/>
     <meta property="og:url" content="{{url()->current()}}"/>
     <meta property="og:type" content="article"/>
@@ -21,7 +26,8 @@
     <meta property="og:image:width" content="180">
     <meta property="og:image:height" content="180">
 
-    <meta name="description" content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
+    <meta name="description"
+          content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
     <meta name="keywords" content="создание сайтов, веб-студия, запорожье, разработка, студия">
     <link rel="alternate" hreflang="ru" href="{{url()->current()}}">
     <link rel="alternate" hreflang="en" href="{{url()->current()}}">
