@@ -41,7 +41,7 @@
 
                     <div class="control-group">
                         <h4>
-                            <revealer>@lang('page.brief.contact.title')</revealer>
+                            <revealer>@lang('page.brief.company.title')</revealer>
                         </h4>
                         <div class="control">
                             <label class="control__label-static" for="#f6">@lang('page.brief.company.f1')</label>
