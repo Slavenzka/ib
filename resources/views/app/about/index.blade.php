@@ -3,7 +3,7 @@
 @section('content')
 
     <section>
-        <div class="container">
+        <div class="container content">
             <revealer :params="{direction: 'rl'}">
                 @lang('page.about.intro')
             </revealer>
