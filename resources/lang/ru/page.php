@@ -24,19 +24,19 @@ return [
             'capabilities' => [
                 [
                     'title' => 'Веб-разработка',
-                    'body' => 'The teams of Laravel & Wordpress ninjas are ready to step into the breach when you need them. Any kind of complexity… no boundaries here!',
+                    'body' => 'Команда Laravel & Wordpress разработчиков готова выполнить задачи любой сложности! Без ограничений!',
                 ],
                 [
                     'title' => 'Оптимизация и аудит',
-                    'body' => 'Life is full of curveballs and even the most efficient web solutions need to be updated form time to time. Our optimization & audit gurus will boost your site’s efficiency sky-high!',
+                    'body' => 'Даже самые эффективные web-решения нуждаются в обновлении! Наши специалисты поднимут эффективность Вашего сайта при помощи самых последних технологий.',
                 ],
                 [
                     'title' => 'Веб-дизайн',
-                    'body' => 'The look matters, you know. We\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Impression Bureau will be your helping hand.',
+                    'body' => 'Внешний вид имеет значение! Мы уверены в том, что лаконичный и элегантный дизайн так-же важен, как и чистый код и правильная оптимизация? Impression Bureau готовы помочь Вам в этом!',
                 ],
                 [
                     'title' => 'Поддержка пользователей',
-                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Impression Bureau can not only develop projects from scratch, but also provide web any kind of dev assistance.',
+                    'body' => 'Если Вам нужна профессиональная консультация или Вы в поиске специалистов по обсуживанию и устранению неполадок вашего ресурса – Вы наш клиент.',
                 ],
             ],
         ],
