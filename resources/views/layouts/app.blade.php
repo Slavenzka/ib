@@ -15,14 +15,14 @@
 
     <meta property="og:title" content="{{ config('app.name', 'IB') . (isset($app_title) ? ' | ' . $app_title : '') }}"/>
     <meta property="og:description" content='Профессиональная разработка, дизайн и маркетинг для веб-сайтов.'/>
-    <meta property="og:url" content="{{ app('router')->current() }}"/>
+    <meta property="og:url" content="{{url()->current()}}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="{{ asset('images/favicons/apple-touch-icon.png') }}"/>
 
     <meta name="description" content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
     <meta name="keywords" content="создание сайтов, веб-студия, запорожье, разработка, студия">
-    <link rel="alternate" hreflang="ru" href="{{ app('router')->current() }}">
-    <link rel="alternate" hreflang="en" href="{{ app('router')->current() }}">
+    <link rel="alternate" hreflang="ru" href="{{url()->current()}}">
+    <link rel="alternate" hreflang="en" href="{{url()->current()}}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/favicon-32x32.png') }}">
