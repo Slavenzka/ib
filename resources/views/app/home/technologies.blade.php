@@ -38,7 +38,7 @@
                                 {{ $item['title'] }}
                             </revealer>
                         </h4>
-                        <p class="mb-0">{{ $item['body'] }}</p>
+                        <div>{{ $item['body'] }}</div>
                     </div>
                 @endforeach
             </div>
