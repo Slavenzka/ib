@@ -28,7 +28,7 @@ return [
                 ],
                 [
                     'title' => 'Optimization and Audit',
-                    'body' => 'Life is full of curveballs and even the most efficient web solutions need to be updated form time to time. Our optimization & audit gurus will boost your site’s efficiency sky-high!',
+                    'body' => 'Life is full of curveballs and even the most efficient web solutions need to be updated from time to time. Our optimization & audit gurus will boost your site’s efficiency sky-high!',
                 ],
                 [
                     'title' => 'Web Design',
