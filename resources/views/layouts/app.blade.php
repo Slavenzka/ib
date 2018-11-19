@@ -22,9 +22,9 @@
     <meta property="og:description" content="Профессиональная разработка, дизайн и маркетинг для веб-сайтов."/>
     <meta property="og:url" content="{{url()->current()}}"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:image" content="{{ asset('images/favicons/safari-pinned-tab.svg') }}"/>
-    <meta property="og:image:width" content="200">
-    <meta property="og:image:height" content="200">
+    <meta property="og:image" content="{{ asset('images/favicons/android-chrome-512x512.png') }}"/>
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
     <meta property="fb:app_id" content="357482571679823">
 
     <meta name="description"
