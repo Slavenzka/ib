@@ -17,14 +17,14 @@
                 $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp
                 <revealer class="tech-item flex align-center justify-center m-4" :params="{direction: {{ "'$dir'" }}}">
-                    <p><img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}"></p>
-                    <small>{{ ucfirst($tech) }}</small>
+                    <div class="mb-2 squire-50"><img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}"></div>
+                    <small class="lh-1">{{ ucfirst($tech) }}</small>
                 </revealer>
             @endforeach
         </div>
 
         <div class="maw-lg-80 mx-auto">
-            <div class="grid mt-8 capabilities">
+            <div class="grid mt-8 capabilities text-center">
                 @foreach(trans('page.home.tech.capabilities') as $item)
                     <div class="w-md-6/12 capability">
                         <span class="capability__number mb-2">{{ $loop->iteration }}</span>

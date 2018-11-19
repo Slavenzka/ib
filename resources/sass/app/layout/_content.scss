@@ -3,3 +3,14 @@
     max-width: rem-calc(1000);
     margin: 0 auto;
 }
+
+.lh-1 {
+    line-height: 1;
+}
+
+.squire {
+    &-50 {
+        width: rem-calc(50);
+        height: rem-calc(50);
+    }
+}
