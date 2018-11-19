@@ -14,12 +14,15 @@
         <div class="flex justify-center text-center">
             @foreach(\App\Models\App::$TECHS as $key => $tech)
                 @php
-                $dir = array_random(['lr', 'rl', 'bt', 'tb']);
+                    $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp
-                <revealer class="tech-item flex justify-center m-4" :params="{direction: {{ "'$dir'" }}}">
-                    <img src="{{ asset('images/icons/'.$key.'.svg') }}" class="squire-50" alt="{{ $tech }}" title="{{ $tech }}">
+                <div class="m-4">
+                    <revealer class="tech-item flex align-center justify-center mb-1"
+                              :params="{direction: {{ "'$dir'" }}}">
+                        <img src="{{ asset('images/icons/'.$key.'.svg') }}" alt="{{ $tech }}" title="{{ $tech }}">
+                    </revealer>
                     <small class="lh-1">{{ ucfirst($tech) }}</small>
-                </revealer>
+                </div>
             @endforeach
         </div>
 
