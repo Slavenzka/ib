@@ -12,4 +12,9 @@ class Role extends Model
         'author' => 'Автор',
         'customer' => 'Клиент',
     ];
+
+    protected $fillable = [
+        'name',
+        'display',
+    ];
 }
