@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BriefFormRequest;
+use App\Mail\BriefEnrolled;
 use App\Models\Contact\Brief;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 
 class BriefController extends Controller
 {
@@ -15,10 +17,12 @@ class BriefController extends Controller
      */
     public function store(BriefFormRequest $request): RedirectResponse
     {
-        Brief::create([
+        $brief = Brief::create([
             'body' => $request->only('contact', 'company', 'target', 'group', 'functional', 'design',
                 'hosting'),
         ]);
+
+        Mail::send(new BriefEnrolled($brief));
 
         return \redirect()->route('app.contact.thanks', ['page' => 'brief']);
     }
