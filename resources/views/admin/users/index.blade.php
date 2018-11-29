@@ -16,6 +16,7 @@
                     </div>
                     <div>Роль: <strong>{{ \App\Models\User\Role::$ROLES[$user->role->name] }}</strong></div>
                 </article>
+            </div>
         @empty
             <div class="col">...</div>
         @endforelse
