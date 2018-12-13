@@ -52,4 +52,15 @@ class User extends Authenticatable
 
         return $this->role->name === $role;
     }
+
+	/**
+	 * @param $roles
+	 * @return array
+	 */
+	public static function getUsersEmailsByRoles($roles = ['admin', 'manager']): array
+	{
+		return self::whereHas('role', function($q) use ($roles) {
+			$q->whereIn('name', $roles);
+		})->pluck('email')->all();
+    }
 }

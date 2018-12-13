@@ -3,6 +3,8 @@
 namespace App\Mail;
 
 use App\Models\Contact\Contact;
+use App\Models\User\User;
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -14,7 +16,7 @@ class ContactFilled extends Mailable
 	/**
 	 * @var Contact
 	 */
-	private $contact;
+	public $contact;
 
 	/**
 	 * Create a new message instance.
@@ -33,6 +35,10 @@ class ContactFilled extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this
+			->to(User::getUsersEmailsByRoles())
+			->replyTo($this->contact->email)
+			->subject('Новый контакт. ' . Carbon::now()->format('d.m.Y H:i'))
+			->view('mail.contact');
     }
 }

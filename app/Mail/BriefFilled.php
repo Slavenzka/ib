@@ -35,12 +35,8 @@ class BriefFilled extends Mailable
      */
     public function build()
     {
-        $to = User::whereHas('role', function($q) {
-            $q->whereIn('name', ['admin', 'manager']);
-        })->get(['email'])->all();
-
         return $this
-            ->to($to)
+            ->to(User::getUsersEmailsByRoles())
             ->subject('Новый бриф. ' . Carbon::now()->format('d.m.Y H:i'))
             ->view('mail.brief');
     }
