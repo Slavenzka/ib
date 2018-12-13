@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class BriefEnrolled extends Mailable
+class BriefFilled extends Mailable
 {
     use Queueable, SerializesModels;
     /**
@@ -18,11 +18,11 @@ class BriefEnrolled extends Mailable
      */
     public $brief;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+	/**
+	 * Create a new message instance.
+	 *
+	 * @param Brief $brief
+	 */
     public function __construct(Brief $brief)
     {
         $this->brief = $brief;
