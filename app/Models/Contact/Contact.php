@@ -21,4 +21,13 @@ class Contact extends Model
 		'comment',
         'status',
     ];
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeProcessing($query)
+	{
+		return $query->where('status', 'progress');
+	}
 }
