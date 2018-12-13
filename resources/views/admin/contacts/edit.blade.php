@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <label for="comment">Комментарии</label>
-            <textarea name="comment" id="comment" rows="4">{{ old('comment') ?? $contact->comment }}</textarea>
+            <textarea name="comment" id="comment" rows="4" class="form-control">{{ old('comment') ?? $contact->comment }}</textarea>
         </div>
 
         <div class="row align-items-end mt-4">
