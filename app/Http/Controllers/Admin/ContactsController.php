@@ -13,7 +13,7 @@ class ContactsController extends Controller
 	{
 		dd(User::whereHas('role', function($q) {
 			$q->whereIn('name', ['admin', 'manager']);
-		})->get(['email'])->all());
+		})->pluck('email')->all());
 		return \view('admin.contacts.index', [
 			'contacts' => Contact::latest()->paginate(50),
 		]);
