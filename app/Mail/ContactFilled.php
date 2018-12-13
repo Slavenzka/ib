@@ -12,7 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ContactFilled extends Mailable
 {
-    use Queueable, SerializesModels;
+//    use Queueable, SerializesModels;
 	/**
 	 * @var Contact
 	 */
