@@ -6,7 +6,6 @@
         @forelse($contacts as $contact)
             <div class="col-md-6">
                 <article class="item p-4">
-                    <div class="item-id">{{ $contact->id }}</div>
                     <div class="row">
                         <div class="col">
                             <h4>
@@ -15,7 +14,7 @@
                                 </a>
                             </h4>
                             <p>{{ $contact->phone }}</p>
-                            <p class="mb-0">{{ $contact->created_at->format('d.m.Y \в H:i') }}</p>
+                            <p class="mb-0 smaller">{{ $contact->created_at->format('d.m.Y \в H:i') }}</p>
                         </div>
                         <div class="col-auto">
                             <span
