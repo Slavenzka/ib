@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col">
                             <h4>
-                                <a href="{{ route('admin.contacts.show', $contact) }}">
+                                <a href="{{ route('admin.contacts.edit', $contact) }}">
                                     {{ $contact->name }}
                                 </a>
                             </h4>
