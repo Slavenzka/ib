@@ -33,7 +33,8 @@ Route::group([
         'prefix' => 'contacts'
     ], function() {
         Route::get('/', 'ContactsController@index')->name('.index');
-        Route::get('{contact}', 'ContactsController@show')->name('.show');
+        Route::get('{contact}', 'ContactsController@edit')->name('.edit');
+        Route::patch('{contact}', 'ContactsController@update')->name('.update');
     });
 
 });

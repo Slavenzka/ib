@@ -18,6 +18,7 @@ class Contact extends Model
         'phone',
         'email',
         'message',
+		'comment',
         'status',
     ];
 }

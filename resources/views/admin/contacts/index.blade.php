@@ -14,6 +14,7 @@
                                     {{ $contact->name }}
                                 </a>
                             </h4>
+                            <p>{{ $contact->phone }}</p>
                             <p class="mb-0">{{ $contact->created_at->format('d.m.Y \в H:i') }}</p>
                         </div>
                         <div class="col-auto">
