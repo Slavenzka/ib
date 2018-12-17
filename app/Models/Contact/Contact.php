@@ -28,6 +28,6 @@ class Contact extends Model
 	 */
 	public function scopeProcessing($query)
 	{
-		return $query->where('status', 'progress');
+		return $query->where('status', 'progress')->orWhere('status', 'no_dial');
 	}
 }
