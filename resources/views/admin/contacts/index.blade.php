@@ -19,7 +19,7 @@
                         <div class="col-auto">
                             <span
                                 class="py-1 px-2 small rounded bg-{{ $contact->status == 'declined' ? 'danger' : ($contact->status == 'finished' ? 'success' : 'warning') }}">
-                            {{ \App\Models\Contact\Brief::$STATUSES[$contact->status] }}
+                            {{ \App\Models\Contact\Contact::$STATUSES[$contact->status] }}
                             </span>
                         </div>
                     </div>
