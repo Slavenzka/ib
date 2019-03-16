@@ -32,7 +32,7 @@
 
                         @if ($work->in_slideshow)
                         <div class="ml-auto">
-                            <svg width="30" height="30"><use xlink:href="#eye"></use></svg>
+                            <svg width="30" height="30" fill="#f4645f"><use xlink:href="#eye"></use></svg>
                         </div>
                         @endif
                     </div>
