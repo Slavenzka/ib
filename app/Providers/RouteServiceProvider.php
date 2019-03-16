@@ -57,6 +57,13 @@ class RouteServiceProvider extends ServiceProvider
 			app()->setLocale('ru');
 			$nav = [
 				[
+					'route' => 'admin.works.index',
+					'compare' => 'admin.works.*',
+					'name' => 'Портфолио',
+					'icon' => 'products',
+					'can_activate' => true,
+				],
+				[
 					'route' => 'admin.briefs.index',
 					'compare' => 'admin.briefs.*',
 					'name' => 'Брифы',
@@ -65,19 +72,12 @@ class RouteServiceProvider extends ServiceProvider
 					'can_activate' => true,
 				],
 				[
-					'route' => 'admin.works.index',
-					'compare' => 'admin.works.*',
-					'name' => 'Портфолио',
-					'icon' => 'products',
-					'can_activate' => true,
-				],
-				[
 					'route' => 'admin.contacts.index',
 					'compare' => 'admin.contacts.*',
 					'name' => 'Контакты',
 					'icon' => 'envelope',
-					'can_activate' => true,
 					'unread' => Contact::processing()->count(),
+					'can_activate' => true,
 				],
 				[
 					'route' => 'admin.users.index',
@@ -86,13 +86,13 @@ class RouteServiceProvider extends ServiceProvider
 					'icon' => 'users',
 					'can_activate' => Auth::user()->hasRole('admin'),
 				],
-				[
-					'route' => 'admin.settings.index',
-					'compare' => 'admin.settings.*',
-					'name' => 'Настройки',
-					'icon' => 'settings',
-					'can_activate' => Auth::user()->hasRole('admin'),
-				],
+//				[
+//					'route' => 'admin.settings.index',
+//					'compare' => 'admin.settings.*',
+//					'name' => 'Настройки',
+//					'icon' => 'settings',
+//					'can_activate' => Auth::user()->hasRole('admin'),
+//				],
 			];
 			View::share('nav', $nav);
 		});
