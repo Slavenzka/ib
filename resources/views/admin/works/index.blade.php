@@ -20,12 +20,22 @@
                         <img src="{{ $work->getFirstMediaUrl('preview', 'small') }}" alt="{{ $work->title }}">
                     </a>
 
-                    <h4 class="mt-4 mb-0">
-                        <a href="{{ route('admin.works.edit', $work) }}" class="underline">
-                            {{ $work->title }}
-                        </a>
-                    </h4>
-                    <p class="mb-0">{{ $work->created_at->format('d.m.Y, H:i') }}</p>
+                    <div class="mt-4 d-flex">
+                        <div>
+                            <h4 class="mb-1">
+                                <a href="{{ route('admin.works.edit', $work) }}" class="underline">
+                                    {{ $work->title }}
+                                </a>
+                            </h4>
+                            {{ $work->created_at->format('d.m.Y, H:i') }}
+                        </div>
+
+                        @if ($work->in_slideshow)
+                        <div class="ml-auto">
+                            <svg width="30" height="30"><use xlink:href="#eye"></use></svg>
+                        </div>
+                        @endif
+                    </div>
                 </article>
             </div>
         @empty
