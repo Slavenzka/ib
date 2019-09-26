@@ -1,4 +1,3 @@
-import imagesLoaded from 'imagesloaded';
 import {TweenMax} from 'gsap';
 import charming from 'charming';
 
@@ -535,6 +534,6 @@ import charming from 'charming';
     // Init slideshow.
     const container = document.querySelector('.slideshow');
     if (!!container) {
-        window.onload = () => new Slideshow(container);
+        new Slideshow(container);
     }
 }

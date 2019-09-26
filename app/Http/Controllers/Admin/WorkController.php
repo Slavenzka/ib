@@ -48,6 +48,7 @@ class WorkController extends Controller
         /** @var Work $work */
         $work = Work::create([
             'title' => $request->input('title'),
+            'description' => $request->input('description'),
             'body' => $request->input('body'),
             'type_id' => $request->input('type_id'),
             'in_slideshow' => $request->has('in_slideshow'),
@@ -85,6 +86,7 @@ class WorkController extends Controller
     {
         $work->update([
             'title' => $request->input('title'),
+            'description' => $request->input('description'),
             'body' => $request->input('body'),
             'type_id' => $request->input('type_id'),
             'in_slideshow' => $request->has('in_slideshow'),

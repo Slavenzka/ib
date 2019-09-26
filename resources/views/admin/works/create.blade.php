@@ -22,6 +22,19 @@
                                 @endif
                             </div>
 
+                            <div class="form-group{{ $errors->has($lang.'.description') ? ' is-invalid' : '' }}">
+                                <label for="description">Краткое описание</label>
+                                <input type="text" class="form-control" id="description" name="description[{{$lang}}]"
+                                       value="{{ old('description.'.$lang) }}"
+                                       placeholder="{{ mb_strtoupper($lang) }}"
+                                       required>
+                                @if($errors->has('description.'.$lang))
+                                    <div class="mt-1 text-danger">
+                                        {{ $errors->first('description.'.$lang) }}
+                                    </div>
+                                @endif
+                            </div>
+
                             <div class="form-group">
                                 <label>Описание</label>
                                 <wysiwyg name="body[{{$lang}}]" content="{{ old('body.'.$lang) }}"></wysiwyg>

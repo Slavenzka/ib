@@ -16,9 +16,12 @@ new Vue({
     mounted() {
         document.documentElement.className = "js";
         document.body.classList.remove('loading');
-        require('./modules/slideshow');
+
+
         require('./modules/parallax');
         require('./modules/forms');
         require('./modules/nav');
     }
 });
+
+require('./modules/slideshow');
