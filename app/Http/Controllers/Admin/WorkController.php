@@ -2,114 +2,116 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\WorkSavingRequest;
 use App\Jobs\ImageSaving;
-use App\Models\App;
 use App\Models\Work\Work;
 use App\Models\Work\WorkType;
+use Exception;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use function redirect;
 
 class WorkController extends Controller
 {
-	/**
-	 * @return View
-	 */
-	public function index(): View
-	{
-		return \view('admin.works.index', [
-			'works' => Work::paginate(20),
-		]);
-	}
+    protected $types;
 
-	/**
-	 * @return View
-	 */
-	public function create(): View
-	{
-		return \view('admin.works.create', [
-			'types' => WorkType::latest()->get(),
-		]);
-	}
+    public function __construct()
+    {
+        $this->types = WorkType::all();
+    }
 
-	/**
-	 * @param Request $request
-	 * @return RedirectResponse
-	 */
-	public function store(Request $request): RedirectResponse
-	{
-		/** @var Work $work */
-		$work = Work::create([
-			'type_id' => $request->get('type_id'),
-			'slug' => $request->get('title')['en'],
-			'in_slideshow' => $request->get('in_slideshow'),
-		]);
+    /**
+     * @return View
+     */
+    public function index(): View
+    {
+        return \view('admin.works.index', [
+            'works' => Work::paginate(20),
+        ]);
+    }
 
-		foreach (App::$LANGS as $lang) {
-			$work->translate()->create([
-				'lang' => $lang,
-				'title' => $request->get('title')[$lang],
-				'description' => $request->get('description')[$lang],
-				'body' => $request->get('body')[$lang],
-			]);
-		}
+    /**
+     * @return View
+     */
+    public function create(): View
+    {
+        return \view('admin.works.create', ['types' => $this->types]);
+    }
 
-		if ($request->hasFile('preview')) {
-			dispatch(new ImageSaving($work, 'preview'));
-		}
+    /**
+     * @param WorkSavingRequest $request
+     * @return RedirectResponse
+     */
+    public function store(WorkSavingRequest $request): RedirectResponse
+    {
+        /** @var Work $work */
+        $work = Work::create([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'type_id' => $request->input('type_id'),
+            'in_slideshow' => $request->has('in_slideshow'),
+        ]);
 
-		if ($request->hasFile('work')) {
-			dispatch(new ImageSaving($work, 'work'));
-		}
+        if ($request->hasFile('preview')) {
+            dispatch(new ImageSaving($work, 'preview', createFileName($request->file('preview'))));
+        }
 
-		return \redirect()->route('admin.works.edit', $work);
-	}
+        if ($request->hasFile('work')) {
+            dispatch(new ImageSaving($work, 'work', createFileName($request->file('work'))));
+        }
 
-	/**
-	 * @param Work $work
-	 * @return View
-	 */
-	public function edit(Work $work): View
-	{
-		return \view('admin.works.edit', [
-			'work' => $work,
-			'types' => WorkType::latest()->get(),
-		]);
-	}
+        return redirect()->route('admin.works.edit', $work);
+    }
 
-	/**
-	 * @param Request $request
-	 * @param Work $work
-	 * @return RedirectResponse
-	 */
-	public function update(Request $request, Work $work): RedirectResponse
-	{
-		$work->update([
-			'type_id' => $request->get('type_id'),
-			'slug' => $request->get('title')['en'],
-			'in_slideshow' => $request->get('in_slideshow'),
-		]);
+    /**
+     * @param Work $work
+     * @return View
+     */
+    public function edit(Work $work): View
+    {
+        return \view('admin.works.edit', [
+            'work' => $work,
+            'types' => $this->types,
+        ]);
+    }
 
-		foreach (App::$LANGS as $lang) {
-			$work->translate($lang)->update([
-				'lang' => $lang,
-				'title' => $request->get('title')[$lang],
-				'description' => $request->get('description')[$lang],
-				'body' => $request->get('body')[$lang],
-			]);
-		}
+    /**
+     * @param WorkSavingRequest $request
+     * @param Work $work
+     * @return RedirectResponse
+     */
+    public function update(WorkSavingRequest $request, Work $work): RedirectResponse
+    {
+        $work->update([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'type_id' => $request->input('type_id'),
+            'in_slideshow' => $request->has('in_slideshow'),
+        ]);
 
-		if ($request->hasFile('preview')) {
-			$work->clearMediaCollection('preview');
-			dispatch(new ImageSaving($work, 'preview'));
-		}
+        if ($request->hasFile('preview')) {
+            $work->clearMediaCollection('preview');
+            dispatch(new ImageSaving($work, 'preview', createFileName($request->file('preview'))));
+        }
 
-		if ($request->hasFile('work')) {
-			$work->clearMediaCollection('work');
-			dispatch(new ImageSaving($work, 'work'));
-		}
+        if ($request->hasFile('work')) {
+            $work->clearMediaCollection('work');
+            dispatch(new ImageSaving($work, 'work', createFileName($request->file('work'))));
+        }
 
-		return \redirect()->route('admin.works.edit', $work);
-	}
+        return redirect()->route('admin.works.edit', $work);
+    }
+
+    /**
+     * @param Work $work
+     * @return RedirectResponse
+     * @throws Exception
+     */
+    public function destroy(Work $work): RedirectResponse
+    {
+        $work->delete();
+
+        return back();
+    }
 }

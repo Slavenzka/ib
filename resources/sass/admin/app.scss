@@ -4,7 +4,6 @@
 
 @import "base/form";
 @import "base/link";
-//@import "base/alert";
 
 @import "layout/layout";
 @import "layout/header";
@@ -12,7 +11,7 @@
 @import "layout/main";
 @import "layout/item";
 
-//@import "modules/attribute";
+@import "modules/block-editor";
 @import "modules/notification";
 @import "modules/video";
 @import "modules/pagination";

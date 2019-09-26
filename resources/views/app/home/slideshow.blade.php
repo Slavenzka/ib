@@ -6,7 +6,8 @@
             <div class="slide">
                 <div class="slide__img-wrap">
                     <a href="{{ route('app.work.show', $work) }}" class="slide__link"></a>
-                    <div class="slide__img" style="background-image: url({{ $work->getFirstMediaUrl('preview') }});"></div>
+                    <div class="slide__img"
+                         style="background-image: url({{ $work->preview }});"></div>
                 </div>
                 <div class="slide__side">{{ $work->type->title }}</div>
                 <div class="slide__title-wrap">

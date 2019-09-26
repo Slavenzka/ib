@@ -14,7 +14,7 @@
                             <a href="mailto:{{ $user->email }}" class="underline">{{ $user->email }}</a>
                         </div>
                     </div>
-                    <div>Роль: <strong>{{ \App\Models\User\Role::$ROLES[$user->role->name] }}</strong></div>
+                    <div>Роль: <strong>{{ $user->role }}</strong></div>
                 </article>
             </div>
         @empty

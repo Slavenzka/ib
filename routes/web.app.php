@@ -3,55 +3,37 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'as' => 'app',
-    'namespace' => 'Front',
-    'middleware' => 'locale',
+    'as' => 'app.',
+    'namespace' => 'Front'
 ], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('about', 'HomeController@about')->name('about');
 
-    /**
-     * Works
-     */
     Route::group([
-        'as' => '.work',
+        'as' => 'work.',
         'prefix' => 'works',
     ], function () {
-
-        Route::get('/', 'WorkController@index')->name('.index');
-        Route::get('{work}', 'WorkController@show')->name('.show');
-
+        Route::get('/', 'WorkController@index')->name('index');
+        Route::get('{work}', 'WorkController@show')->name('show');
     });
 
-    /**
-     * Brief
-     */
     Route::group([
-        'as' => '.brief',
+        'as' => 'brief.',
         'prefix' => 'brief'
     ], function () {
-
-        Route::view('/', 'app.brief.index')->name('.index');
+        Route::view('/', 'app.brief.index')->name('index');
         Route::post('send', 'BriefController@store')->name('.store');
-
     });
-    /**
-     * Contacts
-     */
+
     Route::group([
-        'as' => '.contact',
+        'as' => 'contact.',
         'prefix' => 'contacts'
     ], function () {
-
-        Route::get('/', 'ContactController@index')->name('.index');
-        Route::post('send', 'ContactController@send')->name('.send');
-        Route::get('thank-you', 'ContactController@thanks')->name('.thanks');
-
+        Route::get('/', 'ContactController@index')->name('index');
+        Route::post('send', 'ContactController@send')->name('send');
+        Route::get('thank-you', 'ContactController@thanks')->name('thanks');
     });
 
-    /**
-     * Common
-     */
-    Route::get('/', 'HomeController@index')->name('.home');
-    Route::get('locale/{lang?}', 'HomeController@locale')->name('.lang');
-    Route::get('about', 'HomeController@about')->name('.about');
-
+    Route::get('{lang?}', 'LocalesController@switch')->name('lang')
+        ->where('lang', implode('|', config('app.locales')));
 });

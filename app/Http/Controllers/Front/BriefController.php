@@ -7,7 +7,8 @@ use App\Http\Requests\BriefFormRequest;
 use App\Mail\BriefFilled;
 use App\Models\Contact\Brief;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Mail;
+use Mail;
+use function redirect;
 
 class BriefController extends Controller
 {
@@ -24,6 +25,6 @@ class BriefController extends Controller
 
         Mail::send(new BriefFilled($brief));
 
-        return \redirect()->route('app.contact.thanks', ['page' => 'brief']);
+        return redirect()->route('app.contact.thanks', ['page' => 'brief']);
     }
 }

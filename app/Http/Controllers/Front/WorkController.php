@@ -4,20 +4,25 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Work\Work;
+use Illuminate\Contracts\View\View;
 
 class WorkController extends Controller
 {
-    public function index()
+    /**
+     * @return View
+     */
+    public function index(): View
     {
         return \view('app.work.index', [
             'works' => Work::latest()->get()
         ]);
     }
+
     /**
      * @param Work $work
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function show(Work $work)
+    public function show(Work $work): View
     {
         return \view('app.work.show', compact('work'));
     }

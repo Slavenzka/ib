@@ -11,20 +11,26 @@ use Illuminate\Foundation\Bus\Dispatchable;
 class ImageSaving implements ShouldQueue
 {
 	use Dispatchable, SerializesModels;
-	private $model;
-	private $name;
 
-	/**
-	 * Create a new job instance.
-	 *
-	 * @param $model
-	 * @param $name
-	 */
-	public function __construct($model, $name)
+    public $tries = 3;
+
+	protected $model;
+	protected $collection;
+    protected $filename;
+
+    /**
+     * Create a new job instance.
+     *
+     * @param $model
+     * @param $collection
+     * @param $filename
+     */
+	public function __construct($model, $collection, $filename)
 	{
 		$this->model = $model;
-		$this->name = $name;
-	}
+		$this->collection = $collection;
+        $this->filename = $filename;
+    }
 
 	/**
 	 * Execute the job.
@@ -33,6 +39,8 @@ class ImageSaving implements ShouldQueue
 	 */
 	public function handle()
 	{
-		$this->model->addMediaFromRequest($this->name)->toMediaCollection($this->name);
+		$this->model->addMediaFromRequest($this->collection)
+            ->usingFileName($this->filename)
+            ->toMediaCollection($this->collection);
 	}
 }

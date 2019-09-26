@@ -4,7 +4,7 @@
 
     @include('app.home.promo')
 
-    @includeWhen(count($works), 'app.home.slideshow')
+    @includeWhen($works->count(), 'app.home.slideshow')
 
     @include('app.home.technologies')
 

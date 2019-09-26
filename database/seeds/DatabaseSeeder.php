@@ -12,15 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            RolesTableSeeder::class,
             UsersTableSeeder::class,
             WorkTypesTableSeeder::class,
         ]);
-
-        if (config('app.env') === 'local') {
-            $this->call([
-                WorksTableSeeder::class,
-            ]);
-        }
     }
 }

@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="locales" content="{{ json_encode(config('app.locales')) }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'JoySushi') . (isset($app_title) ? ' | ' . $app_title : '') }}</title>
+    <title>{{ config('app.name') . (isset($app_title) ? ' | ' . $app_title : '') }}</title>
 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">

@@ -54,12 +54,11 @@ class RouteServiceProvider extends ServiceProvider
 		});
 
 		View::composer('admin.*', function () {
-			app()->setLocale('ru');
 			$nav = [
 				[
 					'route' => 'admin.works.index',
 					'compare' => 'admin.works.*',
-					'name' => 'Портфолио',
+					'name' => 'Работы',
 					'icon' => 'products',
 					'can_activate' => true,
 				],

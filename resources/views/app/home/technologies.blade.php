@@ -12,7 +12,7 @@
         </p>
 
         <div class="flex justify-center text-center">
-            @foreach(\App\Models\App::$TECHS as $key => $tech)
+            @foreach(\App\Models\Config::$TECHS as $key => $tech)
                 @php
                     $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp

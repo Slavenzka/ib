@@ -24,7 +24,7 @@
                             </a>
                         </p>
                         {{--<p class="flex">--}}
-                            {{--@foreach(\App\Models\App::$SOCIAL as $key => $item)--}}
+                            {{--@foreach(\Config\Models\Config::$SOCIAL as $key => $item)--}}
                                 {{--<a href="{{ $item }}" class="{{ !$loop->last ? 'mr-3' : '' }}">--}}
                                     {{--<svg width="20" height="20"--}}
                                          {{--style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;fill: #fff;">--}}

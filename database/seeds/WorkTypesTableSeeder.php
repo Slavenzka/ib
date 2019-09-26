@@ -11,18 +11,11 @@ class WorkTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (\App\Models\App::$TYPES as $key => $type) {
+        foreach (\App\Models\Config::$TYPES as $key => $type) {
             $item = \App\Models\Work\WorkType::create([
                 'slug' => str_slug($key),
+                'title' => $type
             ]);
-
-            foreach (['ru', 'en'] as $lang) {
-                \App\Models\Work\WorkTypeTranslate::create([
-                    'lang' => $lang,
-                    'title' => $type[$lang],
-                    'type_id' => $item->id,
-                ]);
-            }
         }
     }
 }

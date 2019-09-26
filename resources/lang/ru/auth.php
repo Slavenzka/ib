@@ -2,10 +2,10 @@
 
 return [
 
-    'password' => 'Password',
-    'remember' => 'Remember Me',
-    'forgot' => 'Forgot Your Password?',
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'password' => 'Пароль',
+    'remember' => 'Запомнить меня',
+    'forgot' => 'Забыли пароль?',
+    'failed' => 'Эти учетные данные не соответствуют нашим записям.',
+    'throttle' => 'Слишком много попыток входа в систему. Пожалуйста, повторите попытку через :seconds, секунды.',
 
 ];
