@@ -37,13 +37,11 @@ class WorkType extends Model
 
     protected $fillable = [
         'slug',
-        'title',
-        'description'
+        'title'
     ];
 
     protected $translatable = [
         'title',
-        'description'
     ];
 
     /**

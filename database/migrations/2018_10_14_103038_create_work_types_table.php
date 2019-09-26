@@ -17,7 +17,6 @@ class CreateWorkTypesTable extends Migration
             $table->increments('id');
             $table->string('slug');
             $table->json('title');
-            $table->json('description')->nullable();
             $table->timestamps();
         });
     }

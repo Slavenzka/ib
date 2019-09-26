@@ -56,7 +56,8 @@ class Work extends Model implements HasMedia
         'body',
         'description',
         'type_id',
-        'in_slideshow'
+        'in_slideshow',
+        'url'
     ];
 
     protected $with = [

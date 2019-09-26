@@ -16,6 +16,7 @@ class CreateWorksTable extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('url')->nullable();
             $table->string('slug');
             $table->json('title');
             $table->json('body');
