@@ -22,7 +22,7 @@ Route::group([
         'prefix' => 'brief'
     ], function () {
         Route::view('/', 'app.brief.index')->name('index');
-        Route::post('send', 'BriefController@store')->name('.store');
+        Route::post('store', 'BriefController@store')->name('store');
     });
 
     Route::group([
