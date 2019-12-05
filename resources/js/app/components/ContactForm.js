@@ -13,7 +13,7 @@ export default {
   methods: {
     async onSubmit() {
       await axios.post('/contacts/send', this.fields)
-        .then(({data}) => window.location(data))
+        .then((response) => window.location.replace(response))
         .catch(errors => this.errors = errors.response.data.errors);
     }
   }
