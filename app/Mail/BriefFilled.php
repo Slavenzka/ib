@@ -32,7 +32,7 @@ class BriefFilled extends Mailable
 	public function build()
 	{
 		return $this
-			->to('talanov.o@gmail.com, 332730eg@gmail.com')
+			->to('talanov.o@gmail.com,332730eg@gmail.com')
 			->subject('Новый бриф. ' . Carbon::now()->format('d.m.Y H:i'))
 			->view('mail.brief');
 	}
