@@ -7,22 +7,22 @@ use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactFilled;
 use App\Models\Contact\Contact;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Mail;
 
 class ContactController extends Controller
 {
     /**
      * @param ContactFormRequest $request
-     * @return RedirectResponse
+     * @return string
      */
-    public function send(ContactFormRequest $request): RedirectResponse
+    public function send(ContactFormRequest $request): string
     {
         $contact = Contact::create($request->only('name', 'email', 'phone', 'message'));
 
-        \Mail::send(new ContactFilled($contact));
+        Mail::send(new ContactFilled($contact));
 
-        return redirect()->route('app.contact.thanks', ['page' => 'contact']);
+        return route('app.contact.thanks', ['page' => 'contact']);
     }
 
     /**

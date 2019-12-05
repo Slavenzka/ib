@@ -32,7 +32,7 @@ class ContactFilled extends Mailable
 	public function build()
 	{
 		return $this
-			->to('talanov.o@gmail.com,332730eg@gmail.com')
+            ->to(['332730eg@gmail.com', 'talanov.o@gmail.com'])
 			->replyTo($this->contact->email)
 			->subject('Новый контакт. ' . Carbon::now()->format('d.m.Y H:i'))
 			->view('mail.contact');

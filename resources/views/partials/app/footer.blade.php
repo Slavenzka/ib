@@ -24,14 +24,14 @@
                             </a>
                         </p>
                         {{--<p class="flex">--}}
-                            {{--@foreach(\Config\Models\Config::$SOCIAL as $key => $item)--}}
-                                {{--<a href="{{ $item }}" class="{{ !$loop->last ? 'mr-3' : '' }}">--}}
-                                    {{--<svg width="20" height="20"--}}
-                                         {{--style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;fill: #fff;">--}}
-                                        {{--<use xlink:href="#icon-{{ $key }}"></use>--}}
-                                    {{--</svg>--}}
-                                {{--</a>--}}
-                            {{--@endforeach--}}
+                        {{--@foreach(\Config\Models\Config::$SOCIAL as $key => $item)--}}
+                        {{--<a href="{{ $item }}" class="{{ !$loop->last ? 'mr-3' : '' }}">--}}
+                        {{--<svg width="20" height="20"--}}
+                        {{--style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;fill: #fff;">--}}
+                        {{--<use xlink:href="#icon-{{ $key }}"></use>--}}
+                        {{--</svg>--}}
+                        {{--</a>--}}
+                        {{--@endforeach--}}
                         {{--</p>--}}
                     </div>
 
@@ -42,33 +42,35 @@
                             </revealer>
                         </h4>
 
-                        <form action="{{ route('app.contact.send') }}" method="post">
-                            @csrf
-                            <div class="control{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="control__label">
-                                    <span class="control__name">@lang('forms.contact-us.fields.name')</span>
-                                    <input type="text" name="name" class="control__input" required>
-                                </label>
-                            </div>
+                        <contact-form inline-template>
+                            <form action="{{ route('app.contact.send') }}" method="post" @submit.prevent="onSubmit()">
+                                @csrf
+                                <div class="control" :class="{'has-errors': errors.name}">
+                                    <label class="control__label">
+                                        <span class="control__name">@lang('forms.contact-us.fields.name')</span>
+                                        <input type="text" name="name" class="control__input" v-model="fields.name" required>
+                                    </label>
+                                </div>
 
-                            <div class="control{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="control__label">
-                                    <span class="control__name">@lang('forms.contact-us.fields.email')</span>
-                                    <input type="email" name="email" class="control__input" required>
-                                </label>
-                            </div>
+                                <div class="control" :class="{'has-errors': errors.email}">
+                                    <label class="control__label">
+                                        <span class="control__name">@lang('forms.contact-us.fields.email')</span>
+                                        <input type="email" name="email" class="control__input" v-model="fields.email" required>
+                                    </label>
+                                </div>
 
-                            <div class="control{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label class="control__label">
-                                    <span class="control__name">@lang('forms.contact-us.fields.phone')</span>
-                                    <input type="tel" name="phone" class="control__input" required>
-                                </label>
-                            </div>
+                                <div class="control" :class="{'has-errors': errors.phone}">
+                                    <label class="control__label">
+                                        <span class="control__name">@lang('forms.contact-us.fields.phone')</span>
+                                        <input type="tel" name="phone" class="control__input" v-model="fields.phone" required>
+                                    </label>
+                                </div>
 
-                            <button class="button button--primary">
-                                @lang('buttons.send')
-                            </button>
-                        </form>
+                                <button class="button button--primary">
+                                    @lang('buttons.send')
+                                </button>
+                            </form>
+                        </contact-form>
                     </div>
                 </div>
             </div>

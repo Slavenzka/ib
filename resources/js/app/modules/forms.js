@@ -1,3 +1,5 @@
+import IMask from 'imask';
+
 const controls = document.querySelectorAll('.control__input');
 
 if (controls.length) {
@@ -17,4 +19,35 @@ if (controls.length) {
             }
         })
     })
+}
+
+const phones = document.querySelectorAll('[type="tel"]');
+
+if (phones.length) {
+  Array.from(phones).forEach(phone => {
+    new IMask(phone, {
+      mask: [
+        {
+          mask: '+000 00 000-00-00',
+          startsWith: '38',
+          country: 'Ukraine'
+        },
+        {
+          mask: '+0 000 000-00-00',
+          startsWith: '7',
+          country: 'Russia'
+        },
+        {
+          mask: '+0 000 000-0000',
+          startsWith: '1',
+          country: 'USA'
+        },
+        {
+          mask: '+0000000000000',
+          startsWith: '',
+          country: 'unknown'
+        }
+      ]
+    })
+  })
 }
