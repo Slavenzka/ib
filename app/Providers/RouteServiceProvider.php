@@ -50,7 +50,7 @@ class RouteServiceProvider extends ServiceProvider
 				//                    'name' => trans('page.title.contacts'),
 				//                ],
 			]);
-			View::share('langs', ['ru', 'en']);
+			View::share('langs', config('app.locales'));
 		});
 
 		View::composer('admin.*', function () {
