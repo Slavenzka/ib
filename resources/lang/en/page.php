@@ -89,8 +89,7 @@ return [
                 'no' => 'No, already done (or in process)',
             ],
             'f2' => 'Domain name or URL which the project placed on',
-            'f3' => 'Hosting needed?',
-            'f4' => 'If you have the hosting note its options',
+            'f3' => 'If you have the hosting note its options',
         ],
         'variants' => [
             'yes' => 'Yes',
