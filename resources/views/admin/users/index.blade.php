@@ -2,6 +2,15 @@
 
 @section('content')
 
+    <div class="d-flex align-items-center">
+        <h1 class="mb-0">Пользователи</h1>
+        <div class="ml-auto">
+            <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
+                Новый пользователь
+            </a>
+        </div>
+    </div>
+
     <table class="table table-striped">
         <thead>
         <tr class="small">
@@ -29,7 +38,7 @@
                                 <use xlink:href="#edit"></use>
                             </svg>
                         </a>
-                        <a href="{{ route('admin.users.destroy', $user) }}" class="btn btn-danger btn-sm">
+                        <a href="{{ route('admin.users.destroy', $user) }}" class="btn btn-danger btn-sm" disabled>
                             <svg width="14" height="14" fill="currentColor">
                                 <use xlink:href="#delete"></use>
                             </svg>
