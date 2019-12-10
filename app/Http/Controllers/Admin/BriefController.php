@@ -3,19 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact\Brief;
+use App\Models\Brief;
 use Illuminate\Http\Request;
+use function back;
+use function view;
 
 class BriefController extends Controller
 {
     public function index()
     {
-        return \view('admin.briefs.index', [
+        return view('admin.briefs.index', [
             'briefs' => Brief::latest()->paginate(20),
         ]);
     }
 
-    public function show(Brief $brief)
+    public function edit(Brief $brief)
     {
         $brief->body = collect($brief->body)->sortBy(function ($i, $k) {
             return array_search($k, array_keys(Brief::$GROUPS));
@@ -23,7 +25,7 @@ class BriefController extends Controller
             return count(array_filter(array_values($i)));
         });
 
-        return \view('admin.briefs.show', compact('brief'));
+        return view('admin.briefs.edit', compact('brief'));
     }
 
     public function update(Request $request, Brief $brief)
@@ -34,6 +36,6 @@ class BriefController extends Controller
             'status' => $request->status
         ]);
 
-        return \back();
+        return back();
     }
 }

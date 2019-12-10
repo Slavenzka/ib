@@ -6,7 +6,7 @@
         <div class="container content">
 
             <div class="maw-lg-80 mx-auto">
-                <form action="{{ route('app.brief.store') }}" method="post">
+                <form action="{{ route('app.contacts.brief') }}" method="post">
                     @csrf
 
                     <div class="control-group">

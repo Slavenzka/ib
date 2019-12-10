@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 Route::group([
     'as' => 'app.',
     'namespace' => 'Front'
@@ -17,23 +15,18 @@ Route::group([
         Route::get('{work}', 'WorkController@show')->name('show');
     });
 
+    Route::view('/brief', 'app.brief.index')->name('brief.index');
     Route::group([
-        'as' => 'brief.',
-        'prefix' => 'brief'
-    ], function () {
-        Route::view('/', 'app.brief.index')->name('index');
-        Route::post('store', 'BriefController@store')->name('store');
-    });
-
-    Route::group([
-        'as' => 'contact.',
+        'as' => 'contacts.',
         'prefix' => 'contacts'
     ], function () {
-        Route::get('/', 'ContactController@index')->name('index');
-        Route::post('send', 'ContactController@send')->name('send');
-        Route::get('thank-you', 'ContactController@thanks')->name('thanks');
+        Route::get('/', 'ContactsController@index')->name('index');
+        Route::post('/', 'ContactsController@send')->name('send');
+        Route::post('brief', 'ContactsController@brief')->name('brief');
+        Route::get('thank-you', 'ContactsController@thanks')->name('thanks');
     });
 
-    Route::get('{lang?}', 'LocalesController@switch')->name('lang')
-        ->where('lang', implode('|', config('app.locales')));
+    Route::get('{lang?}', 'LocalesController@switch')
+        ->where('lang', implode('|', config('app.locales')))
+        ->name('lang');
 });

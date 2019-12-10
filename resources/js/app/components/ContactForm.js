@@ -11,8 +11,8 @@ export default {
   },
 
   methods: {
-    async onSubmit() {
-      await axios.post('/contacts/send', this.fields)
+    async onSubmit({target}) {
+      await axios.post(target.action, this.fields)
         .then(({data}) => location.replace(data))
         .catch(errors => this.errors = errors.response.data.errors);
     }

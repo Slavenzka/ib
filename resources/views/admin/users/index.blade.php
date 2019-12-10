@@ -2,24 +2,49 @@
 
 @section('content')
 
-    <div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr class="small">
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Роль</th>
+            <th>Telegram</th>
+            <th width="80"></th>
+        </tr>
+        </thead>
+
+        <tbody>
         @forelse($users as $user)
-            <div class="col-md-6">
-                <article class="item p-4">
-                    <div class="d-flex">
-                        <h5 class="flex-grow-1">
-                            {{ $user->name }}
-                        </h5>
-                        <div class="ml-3">
-                            <a href="mailto:{{ $user->email }}" class="underline">{{ $user->email }}</a>
-                        </div>
+            <tr>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ __('roles.'.$user->role) }}</td>
+                <td>
+                    <div class="dot dot--{{ $user->telegram_user_id ? 'success' : 'warning' }}"></div>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-warning btn-sm">
+                            <svg width="14" height="14" fill="currentColor">
+                                <use xlink:href="#edit"></use>
+                            </svg>
+                        </a>
+                        <a href="{{ route('admin.users.destroy', $user) }}" class="btn btn-danger btn-sm">
+                            <svg width="14" height="14" fill="currentColor">
+                                <use xlink:href="#delete"></use>
+                            </svg>
+                        </a>
                     </div>
-                    <div>Роль: <strong>{{ $user->role }}</strong></div>
-                </article>
-            </div>
+                </td>
+            </tr>
         @empty
-            <div class="col">...</div>
+            <tr>
+                <td colspan="6">...</td>
+            </tr>
         @endforelse
-    </div>
+        </tbody>
+    </table>
+
+    {{ $users->links() }}
 
 @endsection

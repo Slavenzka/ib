@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Work\Work;
+use App\Models\Work;
 use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller

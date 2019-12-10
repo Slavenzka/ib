@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Models\Contact;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 /**
- * App\Models\Contact\Contact
+ * App\Models\Contact
  *
  * @property int $id
  * @property string $name
@@ -16,19 +17,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact processing()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereComment($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereMessage($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact wherePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Contact whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact processing()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Contact extends Model

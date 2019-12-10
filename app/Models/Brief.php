@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Models\Contact;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 /**
- * App\Models\Contact\Brief
+ * App\Models\Brief
  *
  * @property int $id
  * @property array $body
  * @property string $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief processing()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief whereBody($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief whereStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Contact\Brief whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief processing()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Brief whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Brief extends Model

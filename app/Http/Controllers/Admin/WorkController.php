@@ -5,17 +5,23 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkSavingRequest;
 use App\Jobs\ImageSaving;
-use App\Models\Work\Work;
-use App\Models\Work\WorkType;
+use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
+use App\Models\{Work, WorkType};
 use Exception;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\View\View;
 use function redirect;
 
 class WorkController extends Controller
 {
+    /**
+     * @var WorkType[]|Collection
+     */
     protected $types;
 
+    /**
+     * WorkController constructor.
+     */
     public function __construct()
     {
         $this->types = WorkType::all();

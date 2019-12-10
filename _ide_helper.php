@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.35 on 2019-09-26 13:10:43.
+ * Generated for Laravel 5.8.35 on 2019-12-10 17:12:44.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12,162 +12,6 @@
  */
 
 namespace Illuminate\Support\Facades { 
-
-    /**
-     * 
-     *
-     * @see \Illuminate\Config\Repository
-     */ 
-    class Config {
-        
-        /**
-         * Determine if the given configuration value exists.
-         *
-         * @param string $key
-         * @return bool 
-         * @static 
-         */ 
-        public static function has($key)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->has($key);
-        }
-        
-        /**
-         * Get the specified configuration value.
-         *
-         * @param array|string $key
-         * @param mixed $default
-         * @return mixed 
-         * @static 
-         */ 
-        public static function get($key, $default = null)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->get($key, $default);
-        }
-        
-        /**
-         * Get many configuration values.
-         *
-         * @param array $keys
-         * @return array 
-         * @static 
-         */ 
-        public static function getMany($keys)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->getMany($keys);
-        }
-        
-        /**
-         * Set a given configuration value.
-         *
-         * @param array|string $key
-         * @param mixed $value
-         * @return void 
-         * @static 
-         */ 
-        public static function set($key, $value = null)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        $instance->set($key, $value);
-        }
-        
-        /**
-         * Prepend a value onto an array configuration value.
-         *
-         * @param string $key
-         * @param mixed $value
-         * @return void 
-         * @static 
-         */ 
-        public static function prepend($key, $value)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        $instance->prepend($key, $value);
-        }
-        
-        /**
-         * Push a value onto an array configuration value.
-         *
-         * @param string $key
-         * @param mixed $value
-         * @return void 
-         * @static 
-         */ 
-        public static function push($key, $value)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        $instance->push($key, $value);
-        }
-        
-        /**
-         * Get all of the configuration items for the application.
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function all()
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->all();
-        }
-        
-        /**
-         * Determine if the given configuration option exists.
-         *
-         * @param string $key
-         * @return bool 
-         * @static 
-         */ 
-        public static function offsetExists($key)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->offsetExists($key);
-        }
-        
-        /**
-         * Get a configuration option.
-         *
-         * @param string $key
-         * @return mixed 
-         * @static 
-         */ 
-        public static function offsetGet($key)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        return $instance->offsetGet($key);
-        }
-        
-        /**
-         * Set a configuration option.
-         *
-         * @param string $key
-         * @param mixed $value
-         * @return void 
-         * @static 
-         */ 
-        public static function offsetSet($key, $value)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        $instance->offsetSet($key, $value);
-        }
-        
-        /**
-         * Unset a configuration option.
-         *
-         * @param string $key
-         * @return void 
-         * @static 
-         */ 
-        public static function offsetUnset($key)
-        {
-                        /** @var \Illuminate\Config\Repository $instance */
-                        $instance->offsetUnset($key);
-        }
-         
-    }
 
     /**
      * 
@@ -507,7 +351,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\Models\User\User|null 
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function user()
@@ -545,7 +389,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\Models\User\User|false 
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -614,7 +458,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\Models\User\User|false 
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -681,7 +525,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\Models\User\User 
+         * @return \App\Models\User 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -792,7 +636,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\Models\User\User|null 
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function getUser()
@@ -842,7 +686,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if current user is authenticated. If not, throw an exception.
          *
-         * @return \App\Models\User\User 
+         * @return \App\Models\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -2109,6 +1953,162 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Cache\FileStore $instance */
                         return $instance->getPrefix();
+        }
+         
+    }
+
+    /**
+     * 
+     *
+     * @see \Illuminate\Config\Repository
+     */ 
+    class Config {
+        
+        /**
+         * Determine if the given configuration value exists.
+         *
+         * @param string $key
+         * @return bool 
+         * @static 
+         */ 
+        public static function has($key)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->has($key);
+        }
+        
+        /**
+         * Get the specified configuration value.
+         *
+         * @param array|string $key
+         * @param mixed $default
+         * @return mixed 
+         * @static 
+         */ 
+        public static function get($key, $default = null)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->get($key, $default);
+        }
+        
+        /**
+         * Get many configuration values.
+         *
+         * @param array $keys
+         * @return array 
+         * @static 
+         */ 
+        public static function getMany($keys)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->getMany($keys);
+        }
+        
+        /**
+         * Set a given configuration value.
+         *
+         * @param array|string $key
+         * @param mixed $value
+         * @return void 
+         * @static 
+         */ 
+        public static function set($key, $value = null)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        $instance->set($key, $value);
+        }
+        
+        /**
+         * Prepend a value onto an array configuration value.
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return void 
+         * @static 
+         */ 
+        public static function prepend($key, $value)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        $instance->prepend($key, $value);
+        }
+        
+        /**
+         * Push a value onto an array configuration value.
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return void 
+         * @static 
+         */ 
+        public static function push($key, $value)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        $instance->push($key, $value);
+        }
+        
+        /**
+         * Get all of the configuration items for the application.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * Determine if the given configuration option exists.
+         *
+         * @param string $key
+         * @return bool 
+         * @static 
+         */ 
+        public static function offsetExists($key)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->offsetExists($key);
+        }
+        
+        /**
+         * Get a configuration option.
+         *
+         * @param string $key
+         * @return mixed 
+         * @static 
+         */ 
+        public static function offsetGet($key)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        return $instance->offsetGet($key);
+        }
+        
+        /**
+         * Set a configuration option.
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return void 
+         * @static 
+         */ 
+        public static function offsetSet($key, $value)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        $instance->offsetSet($key, $value);
+        }
+        
+        /**
+         * Unset a configuration option.
+         *
+         * @param string $key
+         * @return void 
+         * @static 
+         */ 
+        public static function offsetUnset($key)
+        {
+                        /** @var \Illuminate\Config\Repository $instance */
+                        $instance->offsetUnset($key);
         }
          
     }
@@ -13180,8 +13180,6 @@ namespace Intervention\Image\Facades {
 
 namespace  { 
 
-    class Config extends \Illuminate\Support\Facades\Config {}
-
     class Artisan extends \Illuminate\Support\Facades\Artisan {}
 
     class Auth extends \Illuminate\Support\Facades\Auth {}
@@ -13193,6 +13191,8 @@ namespace  {
     class Bus extends \Illuminate\Support\Facades\Bus {}
 
     class Cache extends \Illuminate\Support\Facades\Cache {}
+
+    class Config extends \Illuminate\Support\Facades\Config {}
 
     class Cookie extends \Illuminate\Support\Facades\Cookie {}
 

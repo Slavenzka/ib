@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 Route::group([
     'as' => 'admin.',
     'prefix' => 'admin',
@@ -13,23 +11,15 @@ Route::group([
     })->name('index');
 
     Route::resource('briefs', 'BriefController');
-    Route::resource('users', 'UsersController');
     Route::resource('works', 'WorkController');
+    Route::resource('users', 'UsersController')->except('show');
 
     Route::group([
-        'as' => 'settings',
-        'prefix' => 'settings',
-    ], function () {
-        Route::get('/', 'SettingsController@index')->name('.index');
-    });
-
-    Route::group([
-        'as' => 'contacts',
+        'as' => 'contacts.',
         'prefix' => 'contacts',
     ], function () {
-        Route::get('/', 'ContactsController@index')->name('.index');
-        Route::get('{contact}', 'ContactsController@edit')->name('.edit');
-        Route::patch('{contact}', 'ContactsController@update')->name('.update');
+        Route::get('/', 'ContactsController@index')->name('index');
+        Route::get('{contact}', 'ContactsController@edit')->name('edit');
+        Route::patch('{contact}', 'ContactsController@update')->name('update');
     });
-
 });

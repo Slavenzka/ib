@@ -161,6 +161,7 @@ return [
         // Config\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\NavServiceProvider::class,
 
     ],
 
@@ -177,7 +178,6 @@ return [
 
     'aliases' => [
 
-        'Config' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Work;
+namespace App\Models;
 
 use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,35 +15,35 @@ use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
 
 /**
- * Class Work
+ * App\Models\Work
  *
- * @package App\Models\Work
  * @property int $id
  * @property string $slug
  * @property array $title
  * @property array $body
  * @property array|null $description
  * @property int $type_id
- * @property bool $in_slideshow
+ * @property int $in_slideshow
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read string $image_medium
+ * @property-read string $preview
  * @property-read mixed $translations
  * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
  * @property-read int|null $media_count
- * @property-read \App\Models\Work\WorkType $type
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereBody($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereInSlideshow($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereTypeId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work\Work whereUpdatedAt($value)
+ * @property-read \App\Models\WorkType $type
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work inSlideshow()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereInSlideshow($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereTypeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Work whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Work extends Model implements HasMedia

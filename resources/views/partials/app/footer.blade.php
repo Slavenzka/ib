@@ -1,4 +1,4 @@
-@if (app('router')->currentRouteName() !== 'app.contact.thanks')
+@if (app('router')->currentRouteName() !== 'app.contacts.thanks')
     <footer id="app-footer">
         <div class="container">
             <div class="contact-us maw-lg-80 mx-auto">
@@ -43,7 +43,7 @@
                         </h4>
 
                         <contact-form inline-template>
-                            <form action="{{ route('app.contact.send') }}" method="post" @submit.prevent="onSubmit()">
+                            <form action="{{ route('app.contacts.send') }}" method="post" @submit.prevent="onSubmit">
                                 @csrf
                                 <div class="control" :class="{'has-errors': errors.name}">
                                     <label class="control__label">

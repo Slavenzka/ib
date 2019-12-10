@@ -2,33 +2,38 @@
 
 @section('content')
 
-    <div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr class="small">
+            <th width="200">Дата заполнения</th>
+            <th>Имя</th>
+            <th width="140">Статус</th>
+        </tr>
+        </thead>
+
+        <tbody>
         @forelse($briefs as $brief)
-            <div class="col-md-6">
-                <article class="item p-4">
-                    <div class="item-id">{{ $brief->id }}</div>
-                    <div class="row">
-                        <div class="col">
-                            <h4>
-                                <a href="{{ route('admin.briefs.show', $brief) }}">
-                                    {{ ucfirst($brief->body['contact']['f1']) }}
-                                </a>
-                            </h4>
-                            <p class="mb-0">{{ $brief->created_at->format('d.m.Y \в H:i') }}</p>
-                        </div>
-                        <div class="col-auto">
-                            <span
-                                class="py-1 px-2 small rounded bg-{{ $brief->status == 'progress' ? 'warning' : ($brief->status == 'finished' ? 'success' : 'danger') }}">
-                            {{ \App\Models\Contact\Brief::$STATUSES[$brief->status] }}
-                            </span>
-                        </div>
-                    </div>
-                </article>
-            </div>
+            <tr>
+                <td>{{ $brief->created_at->format('d.m.Y \в H:i') }}</td>
+                <td>
+                    <a href="{{ route('admin.briefs.show', $brief) }}">
+                        {{ ucfirst($brief->body['contact']['f1']) }}
+                    </a>
+                </td>
+                <td>
+                    <span
+                        class="py-1 px-2 small rounded bg-{{ $brief->status == 'progress' ? 'warning' : ($brief->status == 'finished' ? 'success' : 'danger') }}">
+                            {{ \App\Models\Brief::$STATUSES[$brief->status] }}
+                    </span>
+                </td>
+            </tr>
         @empty
-            <div class="col">Брифов пока нет...</div>
+            <tr>
+                <td colspan="4">Брифов пока нет...</td>
+            </tr>
         @endforelse
-    </div>
+        </tbody>
+    </table>
 
     {{ $briefs->links() }}
 

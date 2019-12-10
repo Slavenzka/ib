@@ -1,13 +1,18 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
+
 
 /**
- * App\Models\User\User
+ * App\Models\User
  *
  * @property int $id
  * @property string $name
@@ -15,22 +20,23 @@ use Illuminate\Notifications\Notifiable;
  * @property string $password
  * @property string $role
  * @property string|null $remember_token
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User wherePassword($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereRememberToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User\User whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @method static Builder|User newModelQuery()
+ * @method static Builder|User newQuery()
+ * @method static Builder|User query()
+ * @method static Builder|User whereCreatedAt($value)
+ * @method static Builder|User whereEmail($value)
+ * @method static Builder|User whereId($value)
+ * @method static Builder|User whereName($value)
+ * @method static Builder|User wherePassword($value)
+ * @method static Builder|User whereRememberToken($value)
+ * @method static Builder|User whereRole($value)
+ * @method static Builder|User whereUpdatedAt($value)
+ * @mixin Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User admins()
  */
 class User extends Authenticatable
 {
@@ -51,6 +57,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'telegram_user_id'
     ];
 
     /**
@@ -63,6 +70,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function scopeAdmins(Builder $builder)
+    {
+        return $builder->whereIn('role', ['admin', 'manager']);
+    }
 
     /**
      * @param $role
@@ -75,14 +86,5 @@ class User extends Authenticatable
         }
 
         return $this->role === $role;
-    }
-
-    /**
-     * @param $roles
-     * @return array
-     */
-    public static function getUsersEmailsByRoles($roles = ['admin', 'manager']): array
-    {
-        return self::whereIn('role', $roles)->get()->pluck('email')->all();
     }
 }

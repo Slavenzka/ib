@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+require_once __DIR__ . '/web.admin.php';
+require_once __DIR__ . '/web.app.php';
 
-require_once(base_path('routes/web.admin.php'));
-require_once(base_path('routes/web.app.php'));
-
-Auth::routes();
+Auth::routes(['register' => false]);

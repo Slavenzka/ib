@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use function back;
 
 class LocalesController extends Controller
 {
@@ -15,11 +15,11 @@ class LocalesController extends Controller
     public function switch($lang): RedirectResponse
     {
         if (!in_array($lang, config('app.locales'))) {
-            return \back();
+            return back();
         }
 
         session()->put('locale', $lang);
 
-        return \back();
+        return back();
     }
 }
