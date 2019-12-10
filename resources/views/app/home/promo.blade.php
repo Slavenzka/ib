@@ -14,18 +14,14 @@
 
         <div class="mt-8 flex justify-center">
             <div class="mx-4 my-2">
-                <revealer :params="{direction: 'rl'}">
-                    <a href="{{ route('app.brief.index') }}" class="button button--primary button--xl">
-                        {{ __('buttons.fill_brief') }}
-                    </a>
-                </revealer>
+                <a href="{{ route('app.brief.index') }}" class="button button--primary button--xl">
+                    {{ __('buttons.fill_brief') }}
+                </a>
             </div>
             <div class="mx-4 my-2">
-                <revealer :params="{direction: 'lr'}">
-                    <a href="#contact-us" class="button button--primary button--xl">
-                        {{ __('buttons.discuss') }}
-                    </a>
-                </revealer>
+                <button v-scroll-to="'contact-us'" class="button button--primary button--xl">
+                    {{ __('buttons.discuss') }}
+                </button>
             </div>
         </div>
     </div>

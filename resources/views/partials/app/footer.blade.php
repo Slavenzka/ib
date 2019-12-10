@@ -35,7 +35,7 @@
                         {{--</p>--}}
                     </div>
 
-                    <div class="w-md-6/12">
+                    <div class="w-md-6/12" id="contact-us">
                         <h4 class="mb-8">
                             <revealer>
                                 @lang('page.footer.write_to_us')

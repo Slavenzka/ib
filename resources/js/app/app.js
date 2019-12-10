@@ -4,7 +4,11 @@ import VueBlockReveal from 'vue-block-reveal';
 import Revealer from './components/Revealer';
 import ContactForm from "./components/ContactForm";
 
+import ScrollTo from './directives/scroll-to';
+
 Vue.use(VueBlockReveal);
+
+Vue.directive('scroll-to', ScrollTo);
 
 new Vue({
   el: '#app',
