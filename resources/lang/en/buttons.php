@@ -5,5 +5,6 @@ return [
     'send' => 'Send',
     'back_to_main' => 'Back to main page',
     'login' => 'Enter',
-    'all_works' => 'All works'
+    'all_works' => 'All works',
+    'fill_brief' => 'Fill out a brief'
 ];
