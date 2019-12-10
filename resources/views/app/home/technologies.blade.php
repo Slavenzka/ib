@@ -14,7 +14,7 @@
         <div class="flex justify-center text-center">
             @foreach(\App\Models\Config::$TECHS as $key => $tech)
                 @php
-                    $dir = Arr::random(['lr', 'rl', 'bt', 'tb']);
+                    $dir = array_random(['lr', 'rl', 'bt', 'tb']);
                 @endphp
                 <div class="m-4">
                     <revealer class="tech-item flex align-center justify-center mb-1"
