@@ -9,6 +9,7 @@ import ScrollTo from './directives/scroll-to';
 Vue.use(VueBlockReveal);
 
 Vue.directive('scroll-to', ScrollTo);
+Vue.component('revealer', Revealer);
 
 new Vue({
   el: '#app',
@@ -16,7 +17,6 @@ new Vue({
     navVisible: false
   },
   components: {
-    Revealer,
     ContactForm
   },
   mounted() {

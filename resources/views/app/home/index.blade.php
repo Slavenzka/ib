@@ -3,9 +3,7 @@
 @section('content')
 
     @include('app.home.promo')
-
     @includeWhen($works->count(), 'app.home.slideshow')
-
     @include('app.home.technologies')
 
 @endsection

@@ -1,4 +1,5 @@
-<section id="promo" class="flex flex-column justify-center rellax">
+<section id="promo" class="flex flex-column justify-center">
+    <video src="{{ asset('videos/promo.mp4') }}" id="lights" loop autoplay muted></video>
     <div class="container text-center">
         <h1 class="section-title">
             <revealer class="inline-flex" :params="{direction: 'rl'}">

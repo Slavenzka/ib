@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i&amp;subset=cyrillic"
           rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     @if (app('router')->currentRouteName() != 'app.home')
         <meta property="og:title"
@@ -79,5 +78,9 @@
     </main>
     @include('partials.app.footer')
 </div>
+
+@stack('libs')
+<script src="{{ asset('js/app.js') }}" defer></script>
+@stack('scripts')
 </body>
 </html>
