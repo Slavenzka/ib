@@ -8,7 +8,7 @@
 
     <div id="nav" class="flex align-center">
         <ul class="lang flex mr-4 mb-0 text-uppercase">
-            @foreach($langs as $lang)
+            @foreach(config('app.locales') as $lang)
                 <li class="{{ !$loop->last ? 'mr-2' : '' }}">
                     <{!! app()->getLocale() === $lang ? 'span' : 'a data-turbolinks="false" href="'.route('app.lang', $lang).'"' !!}
                     >
