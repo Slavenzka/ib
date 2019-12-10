@@ -1,33 +1,41 @@
 .button {
-    position: relative;
-    padding: 0.25rem 1.5rem;
-    height: rem-calc(48);
-    font: bold 1.25rem/1 $font-family-headings;
+  position: relative;
+  padding: 0.25rem 1.5rem;
+  height: rem-calc(48);
+  font: bold 1.25rem/1 $font-family-headings;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
+
+  &::before {
+    @extend %abs;
+    content: '';
+    z-index: -1;
+    transition: 0.35s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      transform: skewX(-15deg);
+    }
+  }
+
+  &--primary {
+    color: $color-bg !important;
 
     &::before {
-        @extend %abs;
-        content: '';
-        z-index: -1;
-        transition: 0.35s ease-in-out;
+      background-color: $color-text;
     }
+  }
 
-    &:hover {
-        &::before {
-            transform: skewX(-15deg);
-        }
-    }
-
-    &--primary {
-        color: $color-bg !important;
-        &::before {
-            background-color: $color-text;
-        }
-    }
+  &--xl {
+    font-size: 1.625rem;
+    height: 3.25rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
 }
