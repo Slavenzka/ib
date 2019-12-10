@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="d-flex align-items-center">
-        <h1 class="mb-0">Пользователи</h1>
+    <div class="d-flex align-items-center mb-4">
+        <h1 class="mb-0 h2">Пользователи</h1>
         <div class="ml-auto">
             <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
                 Новый пользователь

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserSavingRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -21,6 +22,25 @@ class UsersController extends Controller
     }
 
     /**
+     * @return View
+     */
+    public function create(): View
+    {
+        return view('admin.users.create');
+    }
+
+    /**
+     * @param UserSavingRequest $request
+     * @return RedirectResponse
+     */
+    public function store(UserSavingRequest $request): RedirectResponse
+    {
+        User::create($this->handleAttributes($request));
+
+        return redirect(route('admin.users.index'));
+    }
+
+    /**
      * @param User $user
      * @return View
      */
@@ -30,16 +50,13 @@ class UsersController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param UserSavingRequest $request
      * @param User $user
      * @return RedirectResponse
      */
-    public function update(Request $request, User $user): RedirectResponse
+    public function update(UserSavingRequest $request, User $user): RedirectResponse
     {
-        $attributes = $request->only('name', 'telegram_user_id');
-        $attributes['password'] = \Hash::make($request->input('password'));
-
-        $user->update($attributes);
+        $user->update($this->handleAttributes($request));
 
         return back();
     }
@@ -54,5 +71,17 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect(route('admin.users.index'));
+    }
+
+    /**
+     * @param UserSavingRequest $request
+     * @return array
+     */
+    private function handleAttributes(UserSavingRequest $request): array
+    {
+        $attributes = $request->only('name', 'telegram_user_id');
+        $attributes['password'] = \Hash::make($request->input('password'));
+
+        return $attributes;
     }
 }
