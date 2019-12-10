@@ -24,7 +24,7 @@
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password"
                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                   value="{{ old('password') }}" required>
+                   value="{{ old('password') }}">
         </div>
 
         <div class="form-group">
