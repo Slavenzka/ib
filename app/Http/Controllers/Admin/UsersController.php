@@ -80,7 +80,10 @@ class UsersController extends Controller
     private function handleAttributes(UserSavingRequest $request): array
     {
         $attributes = $request->only('name', 'telegram_user_id');
-        $attributes['password'] = \Hash::make($request->input('password'));
+
+        if ($request->filled('password')) {
+            $attributes['password'] = \Hash::make($request->input('password'));
+        }
 
         return $attributes;
     }
