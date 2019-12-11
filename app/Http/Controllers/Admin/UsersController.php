@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserSavingRequest;
 use App\Models\User;
+use Exception;
+use Hash;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -35,7 +36,10 @@ class UsersController extends Controller
      */
     public function store(UserSavingRequest $request): RedirectResponse
     {
-        User::create($this->handleAttributes($request));
+        $attributes = $request->only('name', 'email', 'telegram_user_id');
+        $attributes['password'] = Hash::make($request->input('password'));
+
+        User::create($attributes);
 
         return redirect(route('admin.users.index'));
     }
@@ -56,7 +60,13 @@ class UsersController extends Controller
      */
     public function update(UserSavingRequest $request, User $user): RedirectResponse
     {
-        $user->update($this->handleAttributes($request));
+        $attributes = $request->only('name', 'telegram_user_id');
+
+        if ($request->filled('password')) {
+            $attributes['password'] = Hash::make($request->input('password'));
+        }
+
+        $user->update($attributes);
 
         return back();
     }
@@ -64,27 +74,12 @@ class UsersController extends Controller
     /**
      * @param User $user
      * @return RedirectResponse
-     * @throws \Exception
+     * @throws Exception
      */
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
 
         return redirect(route('admin.users.index'));
-    }
-
-    /**
-     * @param UserSavingRequest $request
-     * @return array
-     */
-    private function handleAttributes(UserSavingRequest $request): array
-    {
-        $attributes = $request->only('name', 'telegram_user_id');
-
-        if ($request->filled('password')) {
-            $attributes['password'] = \Hash::make($request->input('password'));
-        }
-
-        return $attributes;
     }
 }
