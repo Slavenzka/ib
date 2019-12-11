@@ -33,7 +33,10 @@
                                 <use xlink:href="#edit"></use>
                             </svg>
                         </a>
-                        <a href="{{ route('admin.contacts.destroy', $contact) }}" class="btn btn-danger btn-sm" disabled>
+                        <a href="{{ route('admin.contacts.destroy', $contact) }}"
+                           class="btn btn-danger btn-sm"
+                           onclick="deleteItem()"
+                        >
                             <svg width="14" height="14" fill="currentColor">
                                 <use xlink:href="#delete"></use>
                             </svg>
@@ -49,5 +52,7 @@
     </table>
 
     {{ $contacts->links() }}
+
+    @includeIf('partials.admin.common.deletion')
 
 @endsection

@@ -38,11 +38,17 @@
                                 <use xlink:href="#edit"></use>
                             </svg>
                         </a>
-                        <a href="{{ route('admin.users.destroy', $user) }}" class="btn btn-danger btn-sm" disabled>
-                            <svg width="14" height="14" fill="currentColor">
-                                <use xlink:href="#delete"></use>
-                            </svg>
-                        </a>
+
+                        @if ($user->id !== auth()->user()->id)
+                            <a href="{{ route('admin.users.destroy', $user) }}"
+                               class="btn btn-danger btn-sm"
+                               onclick="deleteItem()"
+                            >
+                                <svg width="14" height="14" fill="currentColor">
+                                    <use xlink:href="#delete"></use>
+                                </svg>
+                            </a>
+                        @endif
                     </div>
                 </td>
             </tr>
@@ -55,5 +61,7 @@
     </table>
 
     {{ $users->links() }}
+
+    @includeIf('partials.admin.common.deletion')
 
 @endsection
