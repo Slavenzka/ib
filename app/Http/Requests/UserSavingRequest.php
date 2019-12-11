@@ -26,7 +26,6 @@ class UserSavingRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['sometimes', 'required', 'email', 'max:255', 'unique:users'],
-            'password' => ['sometimes', 'required', 'string', 'min:6'],
             'role' => ['required', 'string']
         ];
     }
