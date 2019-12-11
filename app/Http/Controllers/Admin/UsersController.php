@@ -36,7 +36,7 @@ class UsersController extends Controller
      */
     public function store(UserSavingRequest $request): RedirectResponse
     {
-        $attributes = $request->only('name', 'email', 'telegram_user_id');
+        $attributes = $request->only('name', 'email', 'role', 'telegram_user_id');
         $attributes['password'] = Hash::make($request->input('password'));
 
         User::create($attributes);
@@ -60,7 +60,7 @@ class UsersController extends Controller
      */
     public function update(UserSavingRequest $request, User $user): RedirectResponse
     {
-        $attributes = $request->only('name', 'telegram_user_id');
+        $attributes = $request->only('name', 'role', 'telegram_user_id');
 
         if ($request->filled('password')) {
             $attributes['password'] = Hash::make($request->input('password'));

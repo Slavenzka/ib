@@ -33,6 +33,16 @@
                    value="{{ old('telegram_user_id') ?? $user->telegram_user_id }}">
         </div>
 
+        <div class="form-group">
+            <select name="role" id="role">
+                @foreach(\App\Models\User::$ROLES as $role)
+                    <option value="{{ $role }}"
+                        {{ $user->role === $role ? 'selected' : '' }}
+                    >{{ __('roles.'.$role) }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="mt-4">
             <button class="btn btn-primary">Сохранить</button>
         </div>
