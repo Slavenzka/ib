@@ -13,13 +13,5 @@ Route::group([
     Route::resource('briefs', 'BriefController');
     Route::resource('works', 'WorkController');
     Route::resource('users', 'UsersController')->except('show');
-
-    Route::group([
-        'as' => 'contacts.',
-        'prefix' => 'contacts',
-    ], function () {
-        Route::get('/', 'ContactsController@index')->name('index');
-        Route::get('{contact}', 'ContactsController@edit')->name('edit');
-        Route::patch('{contact}', 'ContactsController@update')->name('update');
-    });
+    Route::resource('contacts', 'ContactsController')->except('show');
 });
