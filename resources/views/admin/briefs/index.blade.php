@@ -17,7 +17,7 @@
             <tr>
                 <td>{{ $brief->created_at->format('d.m.Y \в H:i') }}</td>
                 <td>
-                    <a href="{{ route('admin.briefs.show', $brief) }}" class="underline">
+                    <a href="{{ route('admin.briefs.edit', $brief) }}" class="underline">
                         {{ ucfirst($brief->body['contact']['f1']) }}
                     </a>
                 </td>

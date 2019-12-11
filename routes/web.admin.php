@@ -10,8 +10,8 @@ Route::group([
         return redirect()->route('admin.briefs.index');
     })->name('index');
 
-    Route::resource('briefs', 'BriefController');
-    Route::resource('works', 'WorkController');
+    Route::resource('briefs', 'BriefController')->except('show');
+    Route::resource('works', 'WorkController')->except('show');
     Route::resource('users', 'UsersController')->except('show');
     Route::resource('contacts', 'ContactsController')->except('show');
 });
