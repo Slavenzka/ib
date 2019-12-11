@@ -8,7 +8,7 @@
         const deleteItem = function () {
             event.preventDefault();
 
-            let confirmation = confirm("{{ __('admin.delete_confirmation') }}");
+            let confirmation = confirm("Уверены?");
             let deletionForm = document.getElementById('deletion-form');
 
             if (confirmation) {
