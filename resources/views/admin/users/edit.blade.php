@@ -3,7 +3,7 @@
 @section('content')
 
     @if ($errors)
-        <div class="alert alert-danger">
+        <div class="alert alert-danger mb-4">
             <ol>
                 @foreach($errors as $error)
                     <li>{{ $error }}</li>
