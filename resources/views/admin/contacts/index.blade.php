@@ -2,33 +2,51 @@
 
 @section('content')
 
-    <div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr class="small">
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Дата создания</th>
+            <th>Статус</th>
+            <th width="80"></th>
+        </tr>
+        </thead>
         @forelse($contacts as $contact)
-            <div class="col-md-6">
-                <article class="item p-4">
-                    <div class="row">
-                        <div class="col">
-                            <h4>
-                                <a href="{{ route('admin.contacts.edit', $contact) }}">
-                                    {{ $contact->name }}
-                                </a>
-                            </h4>
-                            <p>{{ $contact->phone }}</p>
-                            <p class="mb-0 small">{{ $contact->created_at->format('d.m.Y \в H:i') }}</p>
-                        </div>
-                        <div class="col-auto">
-                            <span
-                                class="py-1 px-2 small rounded text-white bg-{{ $contact->status == 'declined' ? 'danger' : ($contact->status == 'finished' ? 'success' : 'warning') }}">
-                            {{ \App\Models\Contact::$STATUSES[$contact->status] }}
-                            </span>
-                        </div>
+            <tr>
+                <td>
+                    <a href="{{ route('admin.contacts.edit', $contact) }}">
+                        {{ $contact->name }}
+                    </a>
+                </td>
+                <td><a href="tel:{{ str_replace([' ', '-', '(', ')'], '', $contact->phone) }}">{{ $contact->phone }}</a></td>
+                <td>{{ $contact->created_at->format('d.m.Y \в H:i') }}</td>
+                <td>
+                    <span class="py-1 px-2 small rounded text-white bg-{{ $contact->status == 'declined' ? 'danger' : ($contact->status == 'finished' ? 'success' : 'warning') }}">
+                        {{ \App\Models\Contact::$STATUSES[$contact->status] }}
+                    </span>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ route('admin.contacts.edit', $contact) }}" class="btn btn-warning btn-sm">
+                            <svg width="14" height="14" fill="currentColor">
+                                <use xlink:href="#edit"></use>
+                            </svg>
+                        </a>
+                        <a href="{{ route('admin.contacts.destroy', $contact) }}" class="btn btn-danger btn-sm" disabled>
+                            <svg width="14" height="14" fill="currentColor">
+                                <use xlink:href="#delete"></use>
+                            </svg>
+                        </a>
                     </div>
-                </article>
-            </div>
+                </td>
+            </tr>
         @empty
-            <div class="col">Контактные формы пока никто не заполнял...</div>
+            <tr>
+                <td colspan="5">Контактные формы пока никто не заполнял...</td>
+            </tr>
         @endforelse
-    </div>
+    </table>
 
     {{ $contacts->links() }}
 
