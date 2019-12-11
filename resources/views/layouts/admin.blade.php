@@ -28,6 +28,7 @@
 <body>
 @include('partials.admin.layout.icons')
 @include('partials.admin.alert.success')
+@include('partials.admin.alert.errors')
 
 <div id="app">
     @includeIf('partials.admin.layout.header')

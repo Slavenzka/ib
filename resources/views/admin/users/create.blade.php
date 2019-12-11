@@ -2,16 +2,6 @@
 
 @section('content')
 
-    @if ($errors)
-        <div class="alert alert-danger mb-4">
-            <ol>
-            @foreach($errors as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-            </ol>
-        </div>
-    @endif
-
     <form action="{{ route('admin.users.store') }}" method="post">
         @csrf
 
