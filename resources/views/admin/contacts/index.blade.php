@@ -15,11 +15,15 @@
         @forelse($contacts as $contact)
             <tr>
                 <td>
-                    <a href="{{ route('admin.contacts.edit', $contact) }}">
+                    <a href="{{ route('admin.contacts.edit', $contact) }}" class="underline">
                         {{ $contact->name }}
                     </a>
                 </td>
-                <td><a href="tel:{{ str_replace([' ', '-', '(', ')'], '', $contact->phone) }}">{{ $contact->phone }}</a></td>
+                <td>
+                    <a href="tel:{{ str_replace([' ', '-', '(', ')'], '', $contact->phone) }}" class="dashed">
+                        {{ $contact->phone }}
+                    </a>
+                </td>
                 <td>{{ $contact->created_at->format('d.m.Y \в H:i') }}</td>
                 <td>
                     <span class="py-1 px-2 small rounded text-white bg-{{ $contact->status == 'declined' ? 'danger' : ($contact->status == 'finished' ? 'success' : 'warning') }}">
