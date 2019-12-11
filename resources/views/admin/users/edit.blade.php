@@ -2,6 +2,16 @@
 
 @section('content')
 
+    @if ($errors)
+        <div class="alert alert-danger">
+            <ol>
+                @foreach($errors as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ol>
+        </div>
+    @endif
+
     <form action="{{ route('admin.users.update', $user) }}" method="post">
         @csrf
         @method('patch')
