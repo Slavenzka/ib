@@ -67,7 +67,7 @@
                                 </div>
 
                                 <button class="button button--primary">
-                                    @lang('buttons.send')
+                                    <preloader :loading="loading">@lang('buttons.send')</preloader>
                                 </button>
                             </form>
                         </contact-form>

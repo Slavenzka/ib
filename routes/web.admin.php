@@ -7,7 +7,7 @@ Route::group([
     'middleware' => ['auth', 'role:admin|manager'],
 ], function () {
     Route::get('/', function () {
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.crm.projects.index');
     })->name('index');
 
     Route::resource('briefs', 'BriefController')->except('show');
