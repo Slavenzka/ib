@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <select name="role" id="role">
+            <select name="role" id="role" class="form-control">
                 @foreach(\App\Models\User::$ROLES as $role)
                     <option value="{{ $role }}">{{ __('roles.'.$role) }}</option>
                 @endforeach
