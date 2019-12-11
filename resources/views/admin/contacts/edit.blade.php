@@ -56,7 +56,7 @@
             </div>
             <div class="col-auto">
                 <select name="status" id="status" class="form-control w-auto">
-                    @foreach(\App\Models\Contact\Contact::$STATUSES as $key => $status)
+                    @foreach(\App\Models\Contact::$STATUSES as $key => $status)
                         <option value="{{ $key }}" {{ $contact->status === $key ? 'selected' : '' }}>
                             {{ $status }}
                         </option>

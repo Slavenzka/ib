@@ -2,7 +2,7 @@
     <nav>
         <ul class="list-unstyled mb-0 mh-100 accordion">
             @foreach($nav as $item)
-                @if ($item['can_activate'])
+                @if (empty($item['can_activate']) || $item['can_activate'])
                     <li id="submenu-heading-{{ $loop->iteration }}"
                         class="nav-item{{ app('router')->currentRouteNamed($item['compare']) ? ' is-active' : '' }}">
                         @isset($item['unread'])

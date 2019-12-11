@@ -45,13 +45,12 @@ class NavServiceProvider extends ServiceProvider
         });
 
         View::composer('admin.*', function () {
-            $nav = [
+            View::share('nav', [
                 [
-                    'route' => 'admin.works.index',
-                    'compare' => 'admin.works.*',
-                    'name' => 'Работы',
-                    'icon' => 'products',
-                    'can_activate' => true,
+                    'route' => 'admin.crm.projects.index',
+                    'compare' => 'admin.crm.*',
+                    'name' => 'Бабло побеждает зло',
+                    'icon' => 'orders'
                 ],
                 [
                     'route' => 'admin.briefs.index',
@@ -59,7 +58,6 @@ class NavServiceProvider extends ServiceProvider
                     'name' => 'Брифы',
                     'icon' => 'orders',
                     'unread' => Brief::processing()->count(),
-                    'can_activate' => true,
                 ],
                 [
                     'route' => 'admin.contacts.index',
@@ -67,7 +65,12 @@ class NavServiceProvider extends ServiceProvider
                     'name' => 'Контакты',
                     'icon' => 'envelope',
                     'unread' => Contact::processing()->count(),
-                    'can_activate' => true,
+                ],
+                [
+                    'route' => 'admin.works.index',
+                    'compare' => 'admin.works.*',
+                    'name' => 'Работы',
+                    'icon' => 'products',
                 ],
                 [
                     'route' => 'admin.users.index',
@@ -76,9 +79,7 @@ class NavServiceProvider extends ServiceProvider
                     'icon' => 'users',
                     'can_activate' => Auth::user()->hasRole('admin'),
                 ],
-            ];
-
-            View::share('nav', $nav);
+            ]);
         });
     }
 

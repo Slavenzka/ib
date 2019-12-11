@@ -8,7 +8,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') . (isset($app_title) ? ' | ' . $app_title : '') }}</title>
+    <title>{{ config('app.name') . (isset($title) ? ' | ' . $title : '') }}</title>
 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
