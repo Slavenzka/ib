@@ -61,11 +61,11 @@ class WorkController extends Controller
         ]);
 
         if ($request->hasFile('preview')) {
-            dispatch(new ImageSaving($work, 'preview', createFileName($request->file('preview'))));
+            dispatch(new ImageSaving($work, $request->file('preview'),'preview'));
         }
 
         if ($request->hasFile('work')) {
-            dispatch(new ImageSaving($work, 'work', createFileName($request->file('work'))));
+            dispatch(new ImageSaving($work, $request->file('work'), 'work'));
         }
 
         return redirect()->route('admin.works.edit', $work);
@@ -100,12 +100,12 @@ class WorkController extends Controller
 
         if ($request->hasFile('preview')) {
             $work->clearMediaCollection('preview');
-            dispatch(new ImageSaving($work, 'preview', createFileName($request->file('preview'))));
+            dispatch(new ImageSaving($work, $request->file('preview'),'preview'));
         }
 
         if ($request->hasFile('work')) {
             $work->clearMediaCollection('work');
-            dispatch(new ImageSaving($work, 'work', createFileName($request->file('work'))));
+            dispatch(new ImageSaving($work, $request->file('work'), 'work'));
         }
 
         return redirect()->route('admin.works.edit', $work);

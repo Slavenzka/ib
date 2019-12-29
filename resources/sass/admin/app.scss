@@ -1,17 +1,17 @@
-@import "config/variables";
+@import "config/variables", "config/functions";
 
 @import '~bootstrap/scss/bootstrap';
 
-@import "base/form";
-@import "base/link";
+@import "base/form", "base/link", "base/btn";
 
 @import "layout/layout";
 @import "layout/header";
 @import "layout/aside";
 @import "layout/main";
-@import "layout/item";
+
+@import "crm/project", "crm/stage";
 
 @import "modules/block-editor";
 @import "modules/notification";
 @import "modules/video";
-@import "modules/pagination";
+@import "modules/pagination", "modules/dot";

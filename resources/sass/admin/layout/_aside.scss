@@ -1,90 +1,94 @@
 #app-aside {
-    position: fixed;
-    left: 0;
-    top: 70px;
-    bottom: 0;
-    width: 280px;
-    padding: 20px;
-    overflow-y: auto;
-    max-height: 100%;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  bottom: 0;
+  width: 280px;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 100%;
 
-    a {
-        text-decoration: none !important;
+  a {
+    text-decoration: none !important;
+  }
+
+  .nav-item {
+    padding: 10px;
+    position: relative;
+
+    svg {
+      fill: $secondary;
     }
 
-    .nav-item {
-        padding: 10px;
+    & > a {
+      font-weight: bold;
+      line-height: 1.25;
+    }
+
+    .unread {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      background-color: $primary;
+      font-weight: bold;
+      color: #fff;
+
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 9 / 16 * 1rem;
+    }
+
+    &.is-active {
+      &::before {
+        position: absolute;
+        left: -20px;
+        border-right: 3px solid $primary;
+        top: 0;
+        bottom: 0;
+        content: '';
+      }
+
+      svg {
+        fill: $primary;
+      }
+
+      & > a {
+        color: $primary;
+      }
+    }
+  }
+
+  .submenu {
+    margin-top: 20px;
+    margin-left: 40px;
+
+    &-item {
+      a {
         position: relative;
+        padding: 0 10px;
 
-        svg {
-            fill: $secondary;
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          content: '';
+          width: 0;
+          border-left: 2px solid $purple;
+          background-color: rgba($purple, 0.25);
+          z-index: -1;
+          transition: 0.35s;
         }
 
-        > a {
-            font-size: 1rem;
-            font-weight: bold;
+        &:hover {
+          &::before {
+            width: 100%;
+          }
         }
-
-        .unread {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            background-color: $purple;
-            font-weight: bold;
-            color: #fff;
-
-            width: 16px;
-            height: 16px;
-            line-height: 16px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 9 / 16 * 1rem;
-        }
-
-        &.is-active {
-            &::before {
-                position: absolute;
-                left: -20px;
-                border-right: 3px solid $purple;
-                top: 0;
-                bottom: 0;
-                content: '';
-            }
-
-            svg {
-                fill: $purple;
-            }
-        }
+      }
     }
-
-    .submenu {
-        margin-top: 20px;
-        margin-left: 40px;
-
-        &-item {
-            a {
-                position: relative;
-                padding: 0 10px;
-
-                &::before {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    content: '';
-                    width: 0;
-                    border-left: 2px solid $purple;
-                    background-color: rgba($purple, 0.25);
-                    z-index: -1;
-                    transition: 0.35s;
-                }
-
-                &:hover {
-                    &::before {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

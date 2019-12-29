@@ -45,6 +45,9 @@
                         <contact-form inline-template>
                             <form action="{{ route('app.contacts.send') }}" method="post" @submit.prevent="onSubmit">
                                 @csrf
+
+                                <input type="text" name="full_name" class="none">
+
                                 <div class="control" :class="{'has-errors': errors.name}">
                                     <label class="control__label">
                                         <span class="control__name">@lang('forms.contact-us.fields.name')</span>

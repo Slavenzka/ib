@@ -20,5 +20,13 @@ Route::group([
         'prefix' => 'crm'
     ], function () {
         Route::resource('projects', 'ProjectsController');
+        Route::resource('projects/{project}/stages', 'StagesController');
+
+        Route::group([
+            'as' => 'tags.', 'prefix' => 'tags'
+        ], function() {
+            Route::get('/', 'TagsController@all')->name('all');
+            Route::post('/', 'TagsController@store')->name('store');
+        });
     });
 });

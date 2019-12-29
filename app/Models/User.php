@@ -37,6 +37,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User admins()
+ * @property string|null $telegram_user_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereTelegramUserId($value)
  */
 class User extends Authenticatable
 {

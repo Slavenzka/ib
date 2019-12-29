@@ -1,0 +1,24 @@
+.dot {
+  width: rem-calc(6);
+  height: rem-calc(6);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-self: center;
+  margin-right: rem-calc(6);
+}
+
+$colors: (
+  'pending' $yellow,
+  'in_progress' $success,
+  'awaiting_payment' mix($yellow, $primary),
+  'finished' darken($success, 10%),
+  'canceled_without_payment' $danger,
+  'canceled_with_payment' $dark,
+  'frozen' #6c6c6c
+);
+
+@each $s, $c in $colors {
+  .dot--#{$s} {
+    background-color: #{$c};
+  }
+}

@@ -2,9 +2,15 @@
 
 namespace App\Jobs;
 
+use App\Http\Helper;
+use App\Models\Work;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Queue\SerializesModels;
+use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
+use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
+use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
 
 class ImageSaving implements ShouldQueue
 {
@@ -12,33 +18,47 @@ class ImageSaving implements ShouldQueue
 
     public $tries = 3;
 
+    /**
+     * @var Work
+     */
     protected $model;
+
+    /**
+     * @var string
+     */
     protected $collection;
-    protected $filename;
+
+    /**
+     * @var UploadedFile
+     */
+    private $file;
 
     /**
      * Create a new job instance.
      *
-     * @param $model
+     * @param Work $model
+     * @param UploadedFile $file
      * @param $collection
-     * @param $filename
      */
-    public function __construct($model, $collection, $filename)
+    public function __construct($model, UploadedFile $file, string $collection)
     {
         $this->model = $model;
         $this->collection = $collection;
-        $this->filename = $filename;
+        $this->file = $file;
     }
 
     /**
      * Execute the job.
      *
      * @return void
+     * @throws DiskDoesNotExist
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
      */
     public function handle()
     {
         $this->model->addMediaFromRequest($this->collection)
-            ->usingFileName($this->filename)
+            ->usingFileName(Helper::createFileName($this->file))
             ->toMediaCollection($this->collection);
     }
 }

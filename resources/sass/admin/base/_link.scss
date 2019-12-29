@@ -8,9 +8,4 @@ a {
     &.underline {
         border-bottom: 1px solid rgba($primary, 0.4);
     }
-
-    &:hover {
-        color: $purple;
-        border-bottom-color: rgba($purple, 0.8);
-    }
 }

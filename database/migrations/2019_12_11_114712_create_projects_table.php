@@ -18,8 +18,8 @@ class CreateProjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->json('tags')->nullable();
             $table->enum('status', Base::$statuses)->default(Base::$statuses[0]);
+            $table->integer('order_column');
             $table->timestamps();
         });
     }

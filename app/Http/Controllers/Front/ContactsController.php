@@ -24,6 +24,10 @@ class ContactsController extends Controller
      */
     public function send(ContactFormRequest $request): string
     {
+        if ($request->filled('full_name')) {
+            return route('app.contacts.thanks', ['page' => 'contact']);
+        }
+
         /** @var Contact $contact */
         $contact = Contact::create($request->only('name', 'email', 'phone', 'message'));
 

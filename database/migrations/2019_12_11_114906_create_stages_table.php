@@ -19,11 +19,12 @@ class CreateStagesTable extends Migration
             $table->unsignedBigInteger('project_id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->float('est_price', 12, 4)->default(0);
+            $table->float('est_price', 12, 2)->nullable();
             $table->enum('est_currency', Base::$currencies)->default(Base::$currencies[0]);
             $table->enum('status', Base::$statuses)->default(Base::$statuses[0]);
             $table->dateTime('starts_at')->nullable();
             $table->dateTime('ends_at')->nullable();
+            $table->integer('order_column');
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');

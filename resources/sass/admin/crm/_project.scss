@@ -1,0 +1,23 @@
+.timeline {
+  display: flex;
+  margin-left: rem-calc(-10);
+  margin-right: rem-calc(-10);
+  overflow-x: auto;
+  padding: rem-calc(6) 0;
+  cursor: grab;
+
+  &:active {
+    cursor : grabbing;
+  }
+}
+
+.project {
+  width: rem-calc(240);
+  flex: 0 0 rem-calc(240);
+  padding-left: rem-calc(10);
+  padding-right: rem-calc(10);
+
+  &__header {
+    margin-bottom: rem-calc(15);
+  }
+}
