@@ -46,7 +46,7 @@
                             <form action="{{ route('app.contacts.send') }}" method="post" @submit.prevent="onSubmit">
                                 @csrf
 
-                                <input type="text" name="full_name" class="none" v-model="fields.full_name"">
+                                <input type="text" name="full_name" class="none" v-model="fields.full_name">
 
                                 <div class="control" :class="{'has-errors': errors.name}">
                                     <label class="control__label">
