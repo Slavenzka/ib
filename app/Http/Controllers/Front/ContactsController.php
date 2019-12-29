@@ -24,12 +24,14 @@ class ContactsController extends Controller
      */
     public function send(ContactFormRequest $request): string
     {
-        if (!$request->filled('full_name')) {
-            /** @var Contact $contact */
-            $contact = Contact::create($request->only('name', 'email', 'phone', 'message'));
-
-            dispatch(new SendNotifications(ContactFormFilled::class, $contact));
+        if ($request->filled('full_name')) {
+            \Log::info('a');
         }
+
+        /** @var Contact $contact */
+        $contact = Contact::create($request->only('name', 'email', 'phone', 'message'));
+
+        dispatch(new SendNotifications(ContactFormFilled::class, $contact));
 
         return route('app.contacts.thanks', ['page' => 'contact']);
     }
