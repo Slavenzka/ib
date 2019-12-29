@@ -24,7 +24,7 @@ class ContactsController extends Controller
      */
     public function send(ContactFormRequest $request): string
     {
-        if (!$request->has('full_name')) {
+        if (!$request->filled('full_name')) {
             /** @var Contact $contact */
             $contact = Contact::create($request->only('name', 'email', 'phone', 'message'));
 
