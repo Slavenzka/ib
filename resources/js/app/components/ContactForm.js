@@ -3,9 +3,10 @@ export default {
     return {
       loading: false,
       fields: {
-        name: '',
-        email: '',
-        phone: '',
+        name: null,
+        email: null,
+        phone: null,
+        full_name: null
       },
       errors: []
     }
