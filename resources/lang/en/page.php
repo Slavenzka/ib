@@ -98,33 +98,24 @@ return [
     ],
 
     'about' => [
-        'intro' => '<p>Impression Bureau — инновационная студия для решения задач бизнеса в сфере разработки и дизайна.</p><p>Компания Impression Bureau основана  в 2018 году. Мы специализируемся на инновациях в сфере разработки и программирования, генерировании идей, быстром прототипировании и нестандартных решениях.</p>
-<p>Мы помогаем нашим клиентам, создавая инструменты, решающие задачи их бизнеса.</p>',
+        'intro' => '<p>Impression Bureau is the uniqueness of each product created by our team.</p><p>We combine professional design with progressive technologies to embody your dreams into reality.</p>',
         'principles' => [
             [
-                'title' => 'Принцип полезного действия',
-                'body' => 'В каждом проекте мы руководствуемся принципом полезного действия для максимальной оптимизации каждого из этапов проекта и рациональном использовании всех ресурсов',
+                'title' => 'Our task',
+                'body' => 'is to provide comprehensive assistance to our customers in the creation and development of projects that contribute to the success of their business.',
             ],
             [
-                'title' => 'Любознательность и культ знаний',
-                'body' => 'Для нас не существует неинтересных тем и скучных задач, мы постоянно расширяем свой кругозор.',
+                'title' => 'We provide a range of services',
+                'body' => 'in the field of professional development of custom software, integration of applications, strategic and technological IT - consulting, testing and support for software.',
             ],
             [
-                'title' => 'Перфекционизм',
-                'body' => 'Мы постоянно стремимся сделать работу наилучшим образом и не идём на компромиссы в ущерб качеству. Для нас унизительно халтурить и делать работу «не хуже других».',
+                'title' => 'From the adaptation of existing solutions',
+                'body' => 'to the specific requirements of customers before developing systems and applications from scratch in accordance with the customer\'s individual requirement.',
             ],
             [
-                'title' => 'Отношение к клиенту',
-                'body' => 'Мы всегда работаем на результат клиента и берёмся за проекты в которые верим. В каждом проекте стараемся сделать больше, чем обещаем.',
+                'title' => 'We develop',
+                'body' => '<ul><li>Corporate systems</li><li>Web applications</li><li>Mobile applications</li></ul>',
             ],
-            [
-                'title' => 'Постоянное движение вверх',
-                'body' => 'Мы постоянно развиваем наши профессиональные качества и уровень наших работ. Оставаться на месте, в зоне комфорта — неприемлемо.',
-            ],
-            [
-                'title' => 'Репутация',
-                'body' => 'Мы знаем цену себе и своей работе. Мы высоко ценим нашу репутацию, именно поэтому каждый проект мы реализовываем по максимуму, невзирая ни на какие трудности.'
-            ]
         ],
     ],
 

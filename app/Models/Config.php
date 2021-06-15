@@ -30,16 +30,11 @@ class Config extends Model
     ];
 
     public static $TECHS = [
-        'laravel' => 'Laravel',
-//        'javascript' => 'JavaScript',
-        'nodejs' => 'NodeJS',
-        'angular' => 'Angular',
-        'vue' => 'Vue.js',
-        'wordpress' => 'Wordpress',
-        'woocommerce' => 'Woocommerce',
-        'octobercms' => 'October CMS',
-        'sass' => 'Sass',
-//        'less' => 'LESS',
+        'java' => 'JAVA',
+        'swift' => 'Swift',
+        'react' => 'React',
+        'azure' => 'Azure Cloud',
+        'aws' => 'AWS Cloud'
     ];
 
     public static $SOCIAL = [
