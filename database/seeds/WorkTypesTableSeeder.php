@@ -12,7 +12,7 @@ class WorkTypesTableSeeder extends Seeder
     public function run()
     {
         foreach (\App\Models\Config::$TYPES as $key => $type) {
-            $item = \App\Models\Work\WorkType::create([
+            $item = \App\Models\WorkType::create([
                 'slug' => str_slug($key),
                 'title' => $type
             ]);
