@@ -16,7 +16,7 @@
                                 {{ $principe['title'] }}
                             </revealer>
                         </h4>
-                        <p>{{ $principe['body'] }}</p>
+                        <div>{!! $principe['body'] !!}</div>
                     </div>
                 @endforeach
             </div>
