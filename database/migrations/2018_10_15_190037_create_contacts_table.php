@@ -20,8 +20,8 @@ class CreateContactsTable extends Migration
             $table->string('email');
             $table->text('message')->nullable();
             $table->text('comment')->nullable();
-            $table->enum('status', array_keys(App\Models\Contact\Contact::$STATUSES))
-                  ->default(array_keys(App\Models\Contact\Contact::$STATUSES)[0]);
+            $table->enum('status', array_keys(App\Models\Contact::$STATUSES))
+                  ->default(array_keys(App\Models\Contact::$STATUSES)[0]);
             $table->timestamps();
         });
     }

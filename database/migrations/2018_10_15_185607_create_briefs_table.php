@@ -16,8 +16,8 @@ class CreateBriefsTable extends Migration
         Schema::create('briefs', function (Blueprint $table) {
             $table->increments('id');
             $table->json('body');
-            $table->enum('status', array_keys(App\Models\Contact\Brief::$STATUSES))
-                  ->default(array_keys(App\Models\Contact\Brief::$STATUSES)[0]);
+            $table->enum('status', array_keys(App\Models\Brief::$STATUSES))
+                  ->default(array_keys(App\Models\Brief::$STATUSES)[0]);
             $table->timestamps();
         });
     }

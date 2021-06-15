@@ -36,7 +36,10 @@ class ContactFormFilled extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', TelegramChannel::class];
+        return [
+            'mail',
+//            TelegramChannel::class
+        ];
     }
 
     /**
