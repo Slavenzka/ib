@@ -12,8 +12,8 @@ return [
 
     'home' => [
         'promo' => [
-            'title' => 'We develop websites and interfaces',
-            'subtitle' => 'Tools to increase the efficiency of your business',
+            'title' => 'We develop and launch IT projects from prototypes to final production release.',
+            'subtitle' => 'We offer a full range of services for the development, introduction and maintenance of software solutions from prototypes to the final release in the production.',
         ],
         'slideshow' => [
             'title' => 'Our latest works',
