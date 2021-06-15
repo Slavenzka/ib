@@ -15,7 +15,7 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        app()->setLocale(session()->get('locale', 'ru'));
+        app()->setLocale(session()->get('locale', config('app.locale')));
 
         if (app('router')->currentRouteNamed('admin.*')) {
             app()->setLocale('ru');
