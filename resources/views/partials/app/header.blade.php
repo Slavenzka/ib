@@ -1,9 +1,5 @@
 <header id="app-header">
-    <{!! app('router')->currentRouteName() !== 'app.home' ? 'a class="logo" href="'. url('/') . '"' : 'div class="logo"' !!}
-    >
-{{--    <svg width="80" height="80">--}}
-{{--        <use xlink:href="#logo"></use>--}}
-{{--    </svg>--}}
+    <{!! app('router')->currentRouteName() !== 'app.home' ? 'a class="logo" href="'. url('/') . '"' : 'div class="logo"' !!}>
     <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }}" style="height: 80px;">
     <{!! app('router')->currentRouteName() !== 'app.home' ? '/a' : '/div' !!}>
 
