@@ -12,15 +12,15 @@
                     <div class="w-md-6/12">
                         <h4 class="mb-8">
                             <revealer item="div" :params="{bgcolor: '#fff'}" class="inline-flex">
-                                Impression Bureau
+                                EVOLTECH
                             </revealer>
                         </h4>
                         <p class="mb-2">
-                            <a class="underline" href="mailto:info@impressionbureau.pro">info@impressionbureau.pro</a>
+                            <a class="underline" href="mailto:info@impressionbureau.pro">info@evol.tech</a>
                         </p>
                         <p class="mb-8">
-                            <a href="tel:+380688624063" class="underline">
-                                +380 68 862 4063
+                            <a href="tel:+380679899231" class="underline">
+                                +380 67 989 92 31
                             </a>
                         </p>
                         {{--<p class="flex">--}}

@@ -26,8 +26,7 @@
     <meta property="og:image:height" content="512">
     <meta property="fb:app_id" content="357482571679823">
 
-    <meta name="description"
-          content='Impression Bureau — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
+    <meta name="description" content='Evolution Technology — создание уникальных сайтов. Магазины, Лендинги, Корпоративные.'>
     <meta name="keywords" content="создание сайтов, веб-студия, запорожье, разработка, студия">
     <link rel="alternate" hreflang="ru" href="{{url()->current()}}">
     <link rel="alternate" hreflang="en" href="{{url()->current()}}">
@@ -38,8 +37,8 @@
     <link rel="manifest" href="{{ asset('images/favicons/site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('images/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
     <link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico') }}">
-    <meta name="apple-mobile-web-app-title" content="Impression Bureau">
-    <meta name="application-name" content="Impression Bureau">
+    <meta name="apple-mobile-web-app-title" content="Evolution Technology">
+    <meta name="application-name" content="Evolution Technology">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="{{ asset('images/favicons/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">

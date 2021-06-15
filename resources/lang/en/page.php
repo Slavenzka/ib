@@ -98,7 +98,7 @@ return [
     ],
 
     'about' => [
-        'intro' => '<p>Impression Bureau is the uniqueness of each product created by our team.</p><p>We combine professional design with progressive technologies to embody your dreams into reality.</p>',
+        'intro' => '<p>Evolution Technology is the uniqueness of each product created by our team.</p><p>We combine professional design with progressive technologies to embody your dreams into reality.</p>',
         'principles' => [
             [
                 'title' => 'Our task',
