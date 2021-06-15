@@ -24,19 +24,19 @@ return [
             'capabilities' => [
                 [
                     'title' => 'Web Development',
-                    'body' => 'The team of Laravel & Wordpress developers are ready to step into the breach when you need them. Any kind of complexity!',
+                    'body' => 'Our experts will improve the efficiency of your site using the latest technologies.',
                 ],
                 [
                     'title' => 'Optimization and Audit',
-                    'body' => 'Life is full of curveballs and even the most efficient web solutions need to be updated from time to time. Our optimization & audit gurus will boost your site’s efficiency sky-high!',
+                    'body' => 'Audit of an existing or development of a new project.  Programming and deployment of the entire project.',
                 ],
                 [
                     'title' => 'Web Design',
-                    'body' => 'The look matters, you know. At Impression Bureau we\'re sure that the clean code is as important as the clean and elegant design. You want to make your website look beautiful? Impression Bureau will be your helping hand.',
+                    'body' => 'Design of the entire system with well-thought-out business logic and taking into account the client\'s audience.',
                 ],
                 [
                     'title' => 'Customer Support',
-                    'body' => 'If you need a professional consultation or looking for maintenance/troubleshooting services, look no further! Impression Bureau can not only develop projects from scratch, but also provide web any kind of dev assistance.',
+                    'body' => 'A full-fledged support after the launch of the project for startups and full-fledged enterprise solutions.',
                 ],
             ],
         ],
