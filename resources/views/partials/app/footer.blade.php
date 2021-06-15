@@ -79,7 +79,7 @@
             </div>
 
             <div class="text-center mt-8">
-                &copy; {{ date('Y') }} <a href="{{ route('app.home') }}" class="underline">Impression.Bureau</a>
+                &copy; {{ date('Y') }} <a href="{{ route('app.home') }}" class="underline">EVOLTECH</a>
             </div>
         </div>
     </footer>
