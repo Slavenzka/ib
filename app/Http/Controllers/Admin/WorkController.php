@@ -90,6 +90,7 @@ class WorkController extends Controller
      */
     public function update(WorkSavingRequest $request, Work $work): RedirectResponse
     {
+        dd($request->all());
         $work->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
