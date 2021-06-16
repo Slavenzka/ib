@@ -43,7 +43,7 @@
 
                     <div class="row justify-content-between">
                         <div class="col-auto">
-                            <a href="{{ route('admin.works.edit', $work) }}" class="d-inline-flex">
+                            <a href="{{ route('admin.works.edit', $work) }}" class="d-inline-flex align-items-center">
                                 <svg fill="currentColor" width="15" height="15">
                                     <use xlink:href="#edit"></use>
                                 </svg>
@@ -51,12 +51,12 @@
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger d-inline-flex"
+                            <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger d-inline-flex align-items-center"
                                onclick="event.preventDefault(); document.getElementById('work-delete-{{ $work->id }}').submit();">
                                 <svg fill="currentColor" width="15" height="15">
                                     <use xlink:href="#delete"></use>
                                 </svg>
-                                Удалить
+                                <span class="ml-2">Удалить</span>
                             </a>
 
                             <form id="work-delete-{{ $work->id }}" action="{{ route('admin.works.destroy', $work) }}"
