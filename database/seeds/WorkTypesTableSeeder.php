@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\WorkType;
 use Illuminate\Database\Seeder;
 
 class WorkTypesTableSeeder extends Seeder
@@ -12,8 +13,9 @@ class WorkTypesTableSeeder extends Seeder
     public function run()
     {
         foreach (\App\Models\Config::$TYPES as $key => $type) {
-            $item = \App\Models\WorkType::create([
+            WorkType::updateOrCreate([
                 'slug' => str_slug($key),
+            ], [
                 'title' => $type
             ]);
         }
