@@ -36,11 +36,11 @@
         data() {
             return {
                 locales,
-                current: 'ru',
+                current: 'uk',
                 langs: {
                     ru: 'Русский',
                     en: 'English',
-                    // uk: 'Украинский'
+                    uk: 'Украинский'
                 }
             }
         },
