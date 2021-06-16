@@ -14,7 +14,7 @@
     <div class="row">
         @forelse($works as $work)
             <div class="col-md-6">
-                <article class="item p-4">
+                <article class="item border rounded p-4">
                     <div class="item-id">{{ $work->id }}</div>
                     <a href="{{ route('admin.works.edit', $work) }}" class="d-block">
                         <img src="{{ $work->getFirstMediaUrl('preview', 'small') }}" alt="{{ $work->title }}">
@@ -35,6 +35,23 @@
                             <svg width="30" height="30" fill="#f4645f"><use xlink:href="#eye"></use></svg>
                         </div>
                         @endif
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="row justify-content-between small">
+                        <div class="col-auto">
+                            <a href="{{ route('admin.works.edit', $work) }}">Редактировать</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger"
+                               onclick="document.getElementById('work-delete-{{ $work->id }}').submit();">Удалить</a>
+
+                            <form id="work-delete-{{ $work->id }}" action="{{ route('admin.works.destroy', $work) }}" method="post">
+                                @csrf
+                                @method('delete')
+                            </form>
+                        </div>
                     </div>
                 </article>
             </div>
