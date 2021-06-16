@@ -31,9 +31,11 @@
                         </div>
 
                         @if ($work->in_slideshow)
-                        <div class="ml-auto">
-                            <svg width="30" height="30" fill="#f4645f"><use xlink:href="#eye"></use></svg>
-                        </div>
+                            <div class="ml-auto">
+                                <svg width="30" height="30" fill="#f4645f">
+                                    <use xlink:href="#eye"></use>
+                                </svg>
+                            </div>
                         @endif
                     </div>
 
@@ -41,13 +43,24 @@
 
                     <div class="row justify-content-between">
                         <div class="col-auto">
-                            <a href="{{ route('admin.works.edit', $work) }}">Редактировать</a>
+                            <a href="{{ route('admin.works.edit', $work) }}" class="d-inline-flex">
+                                <svg fill="currentColor" width="15" height="15">
+                                    <use xlink:href="#edit"></use>
+                                </svg>
+                                <span class="ml-2">Редактировать</span>
+                            </a>
                         </div>
                         <div class="col-auto">
-                            <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger"
-                               onclick="event.preventDefault(); document.getElementById('work-delete-{{ $work->id }}').submit();">Удалить</a>
+                            <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger d-inline-flex"
+                               onclick="event.preventDefault(); document.getElementById('work-delete-{{ $work->id }}').submit();">
+                                <svg fill="currentColor" width="15" height="15">
+                                    <use xlink:href="#delete"></use>
+                                </svg>
+                                Удалить
+                            </a>
 
-                            <form id="work-delete-{{ $work->id }}" action="{{ route('admin.works.destroy', $work) }}" method="post">
+                            <form id="work-delete-{{ $work->id }}" action="{{ route('admin.works.destroy', $work) }}"
+                                  method="post">
                                 @csrf
                                 @method('delete')
                             </form>
