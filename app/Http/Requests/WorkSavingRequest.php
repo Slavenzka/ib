@@ -25,8 +25,8 @@ class WorkSavingRequest extends FormRequest
     {
         return [
             'title.*' => 'required',
-            'preview' => 'image|max:2048',
-            'work' => 'image|max:10000'
+            'preview' => 'file|max:2048',
+            'work' => 'file|max:10000'
         ];
     }
 }
