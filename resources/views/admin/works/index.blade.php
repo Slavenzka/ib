@@ -39,7 +39,7 @@
 
                     <hr class="my-3">
 
-                    <div class="row justify-content-between small">
+                    <div class="row justify-content-between">
                         <div class="col-auto">
                             <a href="{{ route('admin.works.edit', $work) }}">Редактировать</a>
                         </div>
