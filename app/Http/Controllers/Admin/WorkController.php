@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helper;
 use App\Http\Requests\WorkSavingRequest;
-use App\Jobs\ImageSaving;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\UploadedFile;
 use App\Models\{Work, WorkType};
 use Exception;
 use Illuminate\Http\RedirectResponse;
-use function redirect;
 
 class WorkController extends Controller
 {
@@ -61,11 +61,11 @@ class WorkController extends Controller
         ]);
 
         if ($request->hasFile('preview')) {
-            dispatch(new ImageSaving($work, $request->file('preview'),'preview'));
+            $this->storeFile($work, $request->file('preview'), 'preview');
         }
 
         if ($request->hasFile('work')) {
-            dispatch(new ImageSaving($work, $request->file('work'), 'work'));
+            $this->storeFile($work, $request->file('work'), 'work');
         }
 
         return redirect()->route('admin.works.edit', $work);
@@ -99,13 +99,11 @@ class WorkController extends Controller
         ]);
 
         if ($request->hasFile('preview')) {
-            $work->clearMediaCollection('preview');
-            dispatch(new ImageSaving($work, $request->file('preview'),'preview'));
+            $this->storeFile($work, $request->file('preview'), 'preview');
         }
 
         if ($request->hasFile('work')) {
-            $work->clearMediaCollection('work');
-            dispatch(new ImageSaving($work, $request->file('work'), 'work'));
+            $this->storeFile($work, $request->file('work'), 'work');
         }
 
         return redirect()->route('admin.works.edit', $work);
@@ -121,5 +119,14 @@ class WorkController extends Controller
         $work->delete();
 
         return back();
+    }
+
+    private function storeFile(Work $work, UploadedFile $file, string $collection)
+    {
+        $work->clearMediaCollection($collection);
+
+        $work->addMediaFromRequest($collection)
+            ->usingFileName(Helper::createFileName($file))
+            ->toMediaCollection($collection);
     }
 }
