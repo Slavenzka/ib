@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-auto">
                             <a href="{{ route('admin.works.destroy', $work) }}" class="text-danger"
-                               onclick="document.getElementById('work-delete-{{ $work->id }}').submit();">Удалить</a>
+                               onclick="event.preventDefault(); document.getElementById('work-delete-{{ $work->id }}').submit();">Удалить</a>
 
                             <form id="work-delete-{{ $work->id }}" action="{{ route('admin.works.destroy', $work) }}" method="post">
                                 @csrf
