@@ -83,7 +83,7 @@ class Work extends Model implements HasMedia
      */
     public function getPreviewAttribute()
     {
-        return optional($this->getFirstMedia('preview'))->getFullUrl('large');
+        return optional($this->getFirstMedia('preview'))->getFullUrl('medium');
     }
 
     public function scopeInSlideshow()
@@ -108,8 +108,8 @@ class Work extends Model implements HasMedia
                 $this
                     ->addMediaConversion('medium')
                     ->keepOriginalImageFormat()
-                    ->width(1140)
-                    ->height(1140)
+                    ->width(1920)
+                    ->height(1920)
                     ->nonOptimized();
             });
 
@@ -119,8 +119,8 @@ class Work extends Model implements HasMedia
                 $this
                     ->addMediaConversion('large')
                     ->keepOriginalImageFormat()
-                    ->width(1980)
-                    ->height(1980)
+                    ->width(1920)
+                    ->height(1920)
                     ->nonOptimized();
             });
     }
