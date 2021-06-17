@@ -83,7 +83,7 @@ class Work extends Model implements HasMedia
      */
     public function getPreviewAttribute()
     {
-        return optional($this->getFirstMedia('preview'))->getFullUrl('medium');
+        return optional($this->getFirstMedia('preview'))->getFullUrl('large');
     }
 
     public function scopeInSlideshow()
