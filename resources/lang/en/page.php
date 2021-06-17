@@ -12,8 +12,8 @@ return [
 
     'home' => [
         'promo' => [
-            'title' => 'We develop and launch IT projects from prototypes to final production release.',
-            'subtitle' => 'We offer a full range of services for the development, introduction and maintenance of software solutions from prototypes to the final release in the production.',
+            'title' => 'UNLOCK TOMORROW',
+            'subtitle' => 'EVOLTECH creates the most structured, efficient software solutions to elevate a wide range of businesses.',
         ],
         'slideshow' => [
             'title' => 'Our latest works',
@@ -23,20 +23,20 @@ return [
             'subtitle' => 'Check our skills set to choose the one that suits you most',
             'capabilities' => [
                 [
-                    'title' => 'Web Development',
-                    'body' => 'Our experts will improve the efficiency of your site using the latest technologies.',
+                    'title' => 'Consalting',
+                    'body' => 'Create the right IT Strategy with the best return on investment in technology.',
                 ],
                 [
-                    'title' => 'Optimization and Audit',
-                    'body' => 'Audit of an existing or development of a new project.  Programming and deployment of the entire project.',
+                    'title' => 'Product Design',
+                    'body' => 'Design a valuable user experience and system architecture for your digital product.',
                 ],
                 [
-                    'title' => 'Web Design',
-                    'body' => 'Design of the entire system with well-thought-out business logic and taking into account the client\'s audience.',
+                    'title' => 'Product Engineering',
+                    'body' => 'Engineer next-generation software solutions for your business.',
                 ],
                 [
-                    'title' => 'Customer Support',
-                    'body' => 'A full-fledged support after the launch of the project for startups and full-fledged enterprise solutions.',
+                    'title' => 'Dedicated Teams',
+                    'body' => 'Scale, leverage, and benefit from the on-demand workforce.',
                 ],
             ],
         ],
